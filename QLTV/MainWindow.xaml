@@ -431,7 +431,7 @@
                                                   </Button.Content>
                                              </Button>
 
-                                             <Border x:Name="TimKiemDauSach" Grid.Row="1" Grid.Column="0" BorderThickness="2" CornerRadius="10" Margin="10,25,5.6,10">
+                                             <Border x:Name="TimKiemDauSach" Grid.Row="1" Grid.Column="0" BorderThickness="2" CornerRadius="10" Margin="5.6,25,10,10">
                                                   <Border.BorderBrush>
                                                        <DrawingBrush Viewport="0,0,6,6" ViewportUnits="Absolute" TileMode="Tile">
                                                             <DrawingBrush.Drawing>
@@ -448,11 +448,86 @@
                                                             </DrawingBrush.Drawing>
                                                        </DrawingBrush>
                                                   </Border.BorderBrush>
-                                                  <TextBlock Text="Thông tin tìm kiếm" FontStyle="Italic" FontWeight="DemiBold" FontSize="13" Foreground="DarkSeaGreen"  Background="White" 
+                                                  <TextBlock Text="Tìm kiếm đầu sách" FontStyle="Italic" FontWeight="DemiBold" FontSize="13" Foreground="DarkSeaGreen"  Background="White" 
                                                              Width="112"  HorizontalAlignment="Center" Grid.Row="1" Margin="34,-11,964,82.333"/>
                                              </Border>
 
-                                             <Border x:Name="TimTheo" Grid.Row="1" Grid.Column="0" BorderThickness="2" CornerRadius="10" Margin="20,44.667,543.333,20.333">
+                                             <StackPanel Grid.Row="1" Grid.Column="0" Height="135" HorizontalAlignment="Stretch" VerticalAlignment="Center" Orientation="Horizontal">
+                                                  <Border x:Name="TimTheo" Grid.Row="1" Grid.Column="0" BorderThickness="2" CornerRadius="10" Margin="30,48,0,22" Width="581">
+                                                       <Border.BorderBrush>
+                                                            <DrawingBrush Viewport="0,0,6,6" ViewportUnits="Absolute" TileMode="Tile">
+                                                                 <DrawingBrush.Drawing>
+                                                                      <DrawingGroup>
+                                                                           <GeometryDrawing Brush="#43C079">
+                                                                                <GeometryDrawing.Geometry>
+                                                                                     <GeometryGroup>
+                                                                                          <RectangleGeometry Rect="0,0,50,50" />
+                                                                                          <RectangleGeometry Rect="50,50,50,50" />
+                                                                                     </GeometryGroup>
+                                                                                </GeometryDrawing.Geometry>
+                                                                           </GeometryDrawing>
+                                                                      </DrawingGroup>
+                                                                 </DrawingBrush.Drawing>
+                                                            </DrawingBrush>
+                                                       </Border.BorderBrush>
+                                                       <Grid ShowGridLines="False" Margin="0,0,0,25.667">
+                                                            <Grid.RowDefinitions>
+                                                                 <RowDefinition Height="*"/>
+                                                                 <RowDefinition Height="20*"/>
+                                                            </Grid.RowDefinitions>
+                                                            <TextBlock Text="Tìm theo" FontStyle="Italic" FontWeight="DemiBold" FontSize="13" Foreground="DarkSeaGreen"  Background="White" 
+                                                             Width="56"  Margin="20,-11.869,470,27.202" HorizontalAlignment="Center" Grid.RowSpan="2"/>
+                                                            <DockPanel VerticalAlignment="Center" Grid.Row="1" HorizontalAlignment="Stretch" Margin="11,19.667,0,-4.333"   >
+                                                                 <RadioButton Style="{StaticResource MaterialDesignRadioButton}" Content="Mã đầu sách" Foreground="DarkSlateGray" FontSize="12" Width="150"  FontWeight="SemiBold"/>
+                                                                 <RadioButton Style="{StaticResource MaterialDesignRadioButton}" Content="Tên đầu sách" Foreground="DarkSlateGray" FontSize="12" Width="150" FontWeight="SemiBold"/>
+                                                                 <RadioButton Style="{StaticResource MaterialDesignRadioButton}" Content="Thể loại" Foreground="DarkSlateGray" FontSize="12" Width="150" FontWeight="SemiBold"/>
+                                                                 <RadioButton Style="{StaticResource MaterialDesignRadioButton}" Content="Tác giả" Foreground="DarkSlateGray" FontSize="12" Width="78"  FontWeight="SemiBold" />
+                                                            </DockPanel>
+                                                       </Grid>
+                                                  </Border>
+                                                  <Border x:Name="ThanhTimKiem"  BorderThickness="2" CornerRadius="10" Width="420" Height="35" Margin="80,60,0,40" >
+                                                       <Border.BorderBrush>
+                                                            <DrawingBrush Viewport="0,0,6,6" ViewportUnits="Absolute" TileMode="Tile">
+                                                                 <DrawingBrush.Drawing>
+                                                                      <DrawingGroup>
+                                                                           <GeometryDrawing Brush="#43C079">
+                                                                                <GeometryDrawing.Geometry>
+                                                                                     <GeometryGroup>
+                                                                                          <RectangleGeometry Rect="0,0,50,50" />
+                                                                                          <RectangleGeometry Rect="50,50,50,50" />
+                                                                                     </GeometryGroup>
+                                                                                </GeometryDrawing.Geometry>
+                                                                           </GeometryDrawing>
+                                                                      </DrawingGroup>
+                                                                 </DrawingBrush.Drawing>
+                                                            </DrawingBrush>
+                                                       </Border.BorderBrush>
+                                                       <Grid ShowGridLines="False">
+                                                            <Grid.RowDefinitions>
+                                                                 <RowDefinition Height="*"/>
+                                                                 <RowDefinition Height="20*"/>
+                                                            </Grid.RowDefinitions>
+                                                            <TextBlock Text="Thanh tìm kiếm" FontStyle="Italic" FontWeight="DemiBold" FontSize="13" Foreground="DarkSeaGreen"  Background="White" 
+                                                             Width="97"  Margin="15,-12,0,0" HorizontalAlignment="Left" Grid.Row="0" Grid.RowSpan="2"/>
+                                                            <DockPanel Grid.Row="1" Margin="0,0,0,0" HorizontalAlignment="Center">
+                                                                 <materialDesign:PackIcon Kind="Search" Grid.Column="1" Height="27" Width="35"
+                                                                           Foreground="#758391" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                                                 <TextBox x:Name="SearchBar" materialDesign:HintAssist.Hint="Search book or author you want..." 
+                                                                           FontStyle="Italic" FontWeight="Light" VerticalAlignment="Center"
+                                                                           Foreground="#758391" Width="301.926" HorizontalAlignment="Left" BorderThickness="0,0,0,0" Margin="0,2.781,0,2.782" >
+                                                                      <TextBox.Text>
+                                                                           <Binding Path="Name" UpdateSourceTrigger="PropertyChanged">
+                                                                                <!--Đợi xử lý code Behind-->
+                                                                           </Binding>
+                                                                      </TextBox.Text>
+                                                                 </TextBox>
+                                                            </DockPanel>
+                                                       </Grid>
+                                                  </Border>
+                                                  <!---->
+                                             </StackPanel>
+                                             <!--#region InformationField-->
+                                             <Border x:Name="Thongtinsach" Grid.Row="3" Grid.Column="0" BorderThickness="2" CornerRadius="10" Margin="5.6,5,10,10">
                                                   <Border.BorderBrush>
                                                        <DrawingBrush Viewport="0,0,6,6" ViewportUnits="Absolute" TileMode="Tile">
                                                             <DrawingBrush.Drawing>
@@ -469,66 +544,72 @@
                                                             </DrawingBrush.Drawing>
                                                        </DrawingBrush>
                                                   </Border.BorderBrush>
-                                                  <Grid ShowGridLines="False" Margin="0,0,0,25.667">
+                                                  <Grid Grid.Row="3" ShowGridLines="False">
+                                                       <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="2*"/>
+                                                            <ColumnDefinition Width="3*"/>
+                                                            <ColumnDefinition Width="3*"/>
+                                                            <ColumnDefinition Width="*"/>
+                                                       </Grid.ColumnDefinitions>
                                                        <Grid.RowDefinitions>
                                                             <RowDefinition Height="*"/>
-                                                            <RowDefinition Height="20*"/>
+                                                            <RowDefinition Height="45"/>
                                                        </Grid.RowDefinitions>
-                                                       <TextBlock Text="Tìm theo" FontStyle="Italic" FontWeight="DemiBold" FontSize="13" Foreground="DarkSeaGreen"  Background="White" 
-                                                             Width="56"  Margin="28,-11,478,29.667" HorizontalAlignment="Center" Grid.RowSpan="2"/>
-                                                       <DockPanel VerticalAlignment="Center" Grid.Row="1" HorizontalAlignment="Stretch" Margin="11,19.667,-11,-4.333"   >
-                                                            <RadioButton Style="{StaticResource MaterialDesignRadioButton}" Content="Mã đầu sách" Foreground="DarkSlateGray" FontSize="12" Width="150"  FontWeight="SemiBold"/>
-                                                            <RadioButton Style="{StaticResource MaterialDesignRadioButton}" Content="Tên đầu sách" Foreground="DarkSlateGray" FontSize="12" Width="150" FontWeight="SemiBold"/>
-                                                            <RadioButton Style="{StaticResource MaterialDesignRadioButton}" Content="Thể loại" Foreground="DarkSlateGray" FontSize="12" Width="150" FontWeight="SemiBold"/>
-                                                            <RadioButton Style="{StaticResource MaterialDesignRadioButton}" Content="Tác giả" Foreground="DarkSlateGray" FontSize="12" Width="150"  FontWeight="SemiBold" Height="18"/>
-                                                       </DockPanel>
+                                                       <Button Grid.Column="1" Grid.Row="1" Height="30" Width="100" Style="{DynamicResource menuButtonTemplate}" 
+                                                               Content="Lưu" FontSize="14" Foreground="DarkSlateGray" Background="#DAEEE4"/>
+                                                       <Button Grid.Column="2" Grid.Row="1" Height="30" Width="100" Style="{DynamicResource menuButtonTemplate}"
+                                                               Content="Hủy" FontSize="14" Foreground="DarkSlateGray" Background="#DAEEE4"/>
+                                                       <StackPanel Grid.Row="0" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                                            <Button  Height="30" Width="80" Margin="15" Content="Thêm" FontSize="14" Foreground="DarkSlateGray"
+                                                                     Style="{DynamicResource menuButtonTemplate}" Background="#DAEEE4" />
+                                                            <Button  Height="30" Width="80" Margin="15" Content="Sửa" FontSize="14" Foreground="DarkSlateGray"
+                                                                      Style="{DynamicResource menuButtonTemplate}" Background="#DAEEE4"/>
+                                                            <Button  Height="30" Width="80" Margin="15" Content="Xóa" FontSize="14" Foreground="DarkSlateGray"
+                                                                      Style="{DynamicResource menuButtonTemplate}" Background="#DAEEE4"/>
+                                                       </StackPanel>
+                                                       <StackPanel Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" >
+                                                            <TextBox materialDesign:HintAssist.Hint="Mã đầu sách" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                                                                     Width="200" Height="37" Foreground="DarkSlateGray" FontSize="12" FontWeight="DemiBold"/>
+                                                            <TextBox materialDesign:HintAssist.Hint="Tên đầu sách" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                                                                     Width="200" Height="35" Foreground="DarkSlateGray" FontSize="12" FontWeight="DemiBold"/>
+                                                            <ComboBox materialDesign:HintAssist.Hint="Tác giả" Foreground="DarkSlateGray" FontSize="13" Height="37">
+                                                                 <ComboBoxItem Content="Android"/>
+                                                                 <ComboBoxItem Content="IOS"/>
+                                                                 <ComboBoxItem Content="Window"/>
+                                                                 <ComboBoxItem Content="Linux"/>
+                                                            </ComboBox>
+                                                            <ComboBox materialDesign:HintAssist.Hint="Thể loại" Foreground="DarkSlateGray" FontSize="13" Height="37">
+                                                                 <ComboBoxItem Content="Android"/>
+                                                                 <ComboBoxItem Content="IOS"/>
+                                                                 <ComboBoxItem Content="Window"/>
+                                                                 <ComboBoxItem Content="Linux"/>
+                                                            </ComboBox>
+                                                            <TextBox materialDesign:HintAssist.Hint="Nhà xuất bản" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                                                                     Width="200" Height="37" Foreground="DarkSlateGray" FontSize="13" FontWeight="DemiBold" Margin="0,0,0,12"/>
+                                                       </StackPanel>
+                                                       <StackPanel Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" >
+                                                            <TextBox materialDesign:HintAssist.Hint="Mã đầu sách" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                                                                     Width="200" Height="37" Foreground="DarkSlateGray" FontSize="12" FontWeight="DemiBold"/>
+                                                            <TextBox materialDesign:HintAssist.Hint="Mã đầu sách" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                                                                     Width="200" Height="37" Foreground="DarkSlateGray" FontSize="12" FontWeight="DemiBold"/>
+                                                            
+                                                            <TextBox materialDesign:HintAssist.Hint="Mã đầu sách" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                                                                     Width="200" Height="37" Foreground="DarkSlateGray" FontSize="13" FontWeight="DemiBold" Margin="0,0,0,12"/>
+                                                       </StackPanel>
+                                                       <Image Grid.RowSpan="2" Grid.Column="0" Source=".\Image\MTA_image_library.jpg" />
+
+
+
                                                   </Grid>
+
+
+
                                              </Border>
-                                             <Border x:Name="ThanhTimKiem" Grid.Column="0" Grid.Row="1" BorderThickness="2" CornerRadius="10" Margin="709,52.667,25.333,32.333" >
-                                                  <Border.BorderBrush>
-                                                       <DrawingBrush Viewport="0,0,6,6" ViewportUnits="Absolute" TileMode="Tile">
-                                                            <DrawingBrush.Drawing>
-                                                                 <DrawingGroup>
-                                                                      <GeometryDrawing Brush="#43C079">
-                                                                           <GeometryDrawing.Geometry>
-                                                                                <GeometryGroup>
-                                                                                     <RectangleGeometry Rect="0,0,50,50" />
-                                                                                     <RectangleGeometry Rect="50,50,50,50" />
-                                                                                </GeometryGroup>
-                                                                           </GeometryDrawing.Geometry>
-                                                                      </GeometryDrawing>
-                                                                 </DrawingGroup>
-                                                            </DrawingBrush.Drawing>
-                                                       </DrawingBrush>
-                                                  </Border.BorderBrush>
-                                             </Border>
-                                             <Grid ShowGridLines="False">
-                                                  <Grid.RowDefinitions>
-                                                       <RowDefinition Height="*"/>
-                                                       <RowDefinition Height="20*"/>
-                                                  </Grid.RowDefinitions>
-                                                  <TextBlock Text="Thanh tìm kiếm" FontStyle="Italic" FontWeight="DemiBold" FontSize="13" Foreground="DarkSeaGreen"  Background="White" 
-                                                             Width="97"  Margin="730,49,302.333,-63.667" HorizontalAlignment="Center" Grid.Row="0" Grid.RowSpan="2"/>
-                                                  <DockPanel Grid.Row="1" Margin="743,68,56.333,-89.667" >
-                                                       <materialDesign:PackIcon Kind="Search" Grid.Column="1" Height="27" Width="35"
-                                                                           Foreground="#758391" VerticalAlignment="Center" HorizontalAlignment="Center" />
-                                                       <TextBox x:Name="SearchBar" materialDesign:HintAssist.Hint="Search book or author you want..." 
-                                                           FontStyle="Italic" FontWeight="Light" VerticalAlignment="Center"
-                                                           Foreground="#758391" Width="600" HorizontalAlignment="Left" BorderThickness="0,0,0,0"   >
-                                                            <TextBox.Text>
-                                                                 <Binding Path="Name" UpdateSourceTrigger="PropertyChanged">
-                                                                      <!--Đợi xử lý code Behind-->
-                                                                 </Binding>
-                                                            </TextBox.Text>
-                                                       </TextBox>
-                                                  </DockPanel>
-                                             </Grid>
-                                             
-                                             <!--#region InformationField-->
-                                             
-                                             
+
+
+
                                              <!--#endregion InformationField-->
-                                             
+
                                         </Grid>
                                    </Border>
                               </Border>
