@@ -574,30 +574,33 @@
                                                             <TextBox materialDesign:HintAssist.Hint="Mã đầu sách" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
                                                                      Width="200" Height="37" Foreground="DarkSlateGray" FontSize="12" FontWeight="DemiBold"/>
                                                             <TextBox materialDesign:HintAssist.Hint="Tên đầu sách" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
-                                                                     Width="200" Height="35" Foreground="DarkSlateGray" FontSize="12" FontWeight="DemiBold"/>
-                                                            <ComboBox materialDesign:HintAssist.Hint="Tác giả" Foreground="DarkSlateGray" FontSize="13" Height="37">
-                                                                 <ComboBoxItem Content="Android"/>
-                                                                 <ComboBoxItem Content="IOS"/>
-                                                                 <ComboBoxItem Content="Window"/>
-                                                                 <ComboBoxItem Content="Linux"/>
-                                                            </ComboBox>
-                                                            <ComboBox materialDesign:HintAssist.Hint="Thể loại" Foreground="DarkSlateGray" FontSize="13" Height="37">
-                                                                 <ComboBoxItem Content="Android"/>
-                                                                 <ComboBoxItem Content="IOS"/>
-                                                                 <ComboBoxItem Content="Window"/>
-                                                                 <ComboBoxItem Content="Linux"/>
-                                                            </ComboBox>
-                                                            <TextBox materialDesign:HintAssist.Hint="Nhà xuất bản" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
-                                                                     Width="200" Height="37" Foreground="DarkSlateGray" FontSize="13" FontWeight="DemiBold" Margin="0,0,0,12"/>
-                                                       </StackPanel>
-                                                       <StackPanel Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" >
-                                                            <TextBox materialDesign:HintAssist.Hint="Mã đầu sách" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
                                                                      Width="200" Height="37" Foreground="DarkSlateGray" FontSize="12" FontWeight="DemiBold"/>
-                                                            <TextBox materialDesign:HintAssist.Hint="Mã đầu sách" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                                                            <TextBox materialDesign:HintAssist.Hint="Nhà xuất bản" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                                                                     Width="200" Height="37" Foreground="DarkSlateGray" FontSize="12" FontWeight="DemiBold" />
+                                                            <TextBox materialDesign:HintAssist.Hint="Số trang" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                                                                     Width="200" Height="37" Foreground="DarkSlateGray" FontSize="12" FontWeight="DemiBold"/>
+                                                            <TextBox materialDesign:HintAssist.Hint="Số lượng" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
                                                                      Width="200" Height="37" Foreground="DarkSlateGray" FontSize="12" FontWeight="DemiBold"/>
                                                             
-                                                            <TextBox materialDesign:HintAssist.Hint="Mã đầu sách" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
-                                                                     Width="200" Height="37" Foreground="DarkSlateGray" FontSize="13" FontWeight="DemiBold" Margin="0,0,0,12"/>
+                                                       </StackPanel>
+                                                       <StackPanel Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" >
+                                                            
+                                                            <ComboBox materialDesign:HintAssist.Hint="Tác giả" Foreground="DarkSlateGray" FontSize="12" 
+                                                                      Height="37" Width="200" FontWeight="DemiBold" >
+                                                                 <ComboBoxItem Content="Android" />
+                                                                 <ComboBoxItem Content="IOS"/>
+                                                                 <ComboBoxItem Content="Window"/>
+                                                                 <ComboBoxItem Content="Linux"/>
+                                                            </ComboBox>
+                                                            <ComboBox materialDesign:HintAssist.Hint="Thể loại" Foreground="DarkSlateGray" FontSize="12" 
+                                                                      Height="35" Width="200" FontWeight="DemiBold">
+                                                                 <ComboBoxItem Content="Android"/>
+                                                                 <ComboBoxItem Content="IOS"/>
+                                                                 <ComboBoxItem Content="Window"/>
+                                                                 <ComboBoxItem Content="Linux"/>
+                                                            </ComboBox>
+                                                            <TextBox materialDesign:HintAssist.Hint="Giá tiền" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                                                                     Width="200" Height="35" Foreground="DarkSlateGray" FontSize="12" FontWeight="DemiBold" Margin="0,0,0,12"/>
                                                        </StackPanel>
                                                        <Image Grid.RowSpan="2" Grid.Column="0" Source=".\Image\MTA_image_library.jpg" />
 
