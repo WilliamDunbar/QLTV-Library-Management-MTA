@@ -728,7 +728,7 @@
                          <Button.Content>
                               <Rectangle RadiusX="30" RadiusY="30" Width="55" Height="55">
                                    <Rectangle.Fill>
-                                        <ImageBrush x:Name="myImage" ImageSource="D:\Quan_ly_thu_vien\QLTV\QLTV\Image\Soldier.jpg"/>
+                                        <ImageBrush x:Name="myImage" ImageSource=".\Image\Soldier.jpg"/>
                                    </Rectangle.Fill>
                               </Rectangle>
                          </Button.Content>
