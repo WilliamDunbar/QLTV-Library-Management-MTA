@@ -65,8 +65,9 @@ namespace Quan_Ly_Thu_Vien
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.guna2GradientPanel14 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.dtgrdView_Tra = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.btHuy = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.btLuuDS = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnHuy = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnTraSach1 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnCheck = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientPanel5.SuspendLayout();
             this.guna2GradientPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
@@ -146,6 +147,7 @@ namespace Quan_Ly_Thu_Vien
             this.txtNDTimKiem1.Name = "txtNDTimKiem1";
             this.txtNDTimKiem1.Size = new System.Drawing.Size(305, 22);
             this.txtNDTimKiem1.TabIndex = 42;
+            this.txtNDTimKiem1.TextChanged += new System.EventHandler(this.txtNDTimKiem1_TextChanged);
             // 
             // guna2GradientPanel4
             // 
@@ -222,7 +224,7 @@ namespace Quan_Ly_Thu_Vien
             this.txtMaSach1.Location = new System.Drawing.Point(242, 136);
             this.txtMaSach1.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaSach1.Name = "txtMaSach1";
-            this.txtMaSach1.Size = new System.Drawing.Size(200, 25);
+            this.txtMaSach1.Size = new System.Drawing.Size(200, 27);
             this.txtMaSach1.TabIndex = 22;
             this.txtMaSach1.Text = "Mã sách";
             this.txtMaSach1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -298,7 +300,7 @@ namespace Quan_Ly_Thu_Vien
             this.txtMaNVTra.Location = new System.Drawing.Point(452, 215);
             this.txtMaNVTra.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaNVTra.Name = "txtMaNVTra";
-            this.txtMaNVTra.Size = new System.Drawing.Size(200, 25);
+            this.txtMaNVTra.Size = new System.Drawing.Size(200, 27);
             this.txtMaNVTra.TabIndex = 40;
             this.txtMaNVTra.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -391,7 +393,7 @@ namespace Quan_Ly_Thu_Vien
             this.txtMaDG1.Location = new System.Drawing.Point(243, 83);
             this.txtMaDG1.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaDG1.Name = "txtMaDG1";
-            this.txtMaDG1.Size = new System.Drawing.Size(200, 25);
+            this.txtMaDG1.Size = new System.Drawing.Size(200, 27);
             this.txtMaDG1.TabIndex = 21;
             this.txtMaDG1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -428,7 +430,7 @@ namespace Quan_Ly_Thu_Vien
             this.MuonTratxt1.Location = new System.Drawing.Point(242, 37);
             this.MuonTratxt1.Margin = new System.Windows.Forms.Padding(4);
             this.MuonTratxt1.Name = "MuonTratxt1";
-            this.MuonTratxt1.Size = new System.Drawing.Size(200, 25);
+            this.MuonTratxt1.Size = new System.Drawing.Size(200, 27);
             this.MuonTratxt1.TabIndex = 5;
             this.MuonTratxt1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -542,7 +544,7 @@ namespace Quan_Ly_Thu_Vien
             this.bunifuCustomLabel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
             this.bunifuCustomLabel5.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(203, 574);
+            this.bunifuCustomLabel5.Location = new System.Drawing.Point(169, 561);
             this.bunifuCustomLabel5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
             this.bunifuCustomLabel5.Size = new System.Drawing.Size(134, 24);
@@ -652,64 +654,97 @@ namespace Quan_Ly_Thu_Vien
             this.dtgrdView_Tra.ThemeStyle.RowsStyle.Height = 28;
             this.dtgrdView_Tra.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(255)))), ((int)(((byte)(212)))));
             this.dtgrdView_Tra.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.dtgrdView_Tra.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgrdView_Tra_CellClick);
             // 
-            // btHuy
+            // btnHuy
             // 
-            this.btHuy.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btHuy.BackColor = System.Drawing.Color.Transparent;
-            this.btHuy.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(165)))), ((int)(((byte)(71)))));
-            this.btHuy.BorderRadius = 13;
-            this.btHuy.BorderThickness = 2;
-            this.btHuy.CheckedState.Parent = this.btHuy;
-            this.btHuy.CustomImages.Parent = this.btHuy;
-            this.btHuy.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.btHuy.FillColor2 = System.Drawing.Color.WhiteSmoke;
-            this.btHuy.Font = new System.Drawing.Font("Arial Black", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btHuy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(165)))), ((int)(((byte)(71)))));
-            this.btHuy.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btHuy.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btHuy.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(152)))), ((int)(((byte)(0)))));
-            this.btHuy.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btHuy.HoverState.Parent = this.btHuy;
-            this.btHuy.Location = new System.Drawing.Point(1071, 502);
-            this.btHuy.Name = "btHuy";
-            this.btHuy.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(238)))), ((int)(((byte)(228)))));
-            this.btHuy.ShadowDecoration.BorderRadius = 12;
-            this.btHuy.ShadowDecoration.Color = System.Drawing.Color.Silver;
-            this.btHuy.ShadowDecoration.Depth = 15;
-            this.btHuy.ShadowDecoration.Parent = this.btHuy;
-            this.btHuy.Size = new System.Drawing.Size(221, 40);
-            this.btHuy.TabIndex = 68;
-            this.btHuy.Text = "Hủy";
+            this.btnHuy.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnHuy.BackColor = System.Drawing.Color.Transparent;
+            this.btnHuy.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(165)))), ((int)(((byte)(71)))));
+            this.btnHuy.BorderRadius = 13;
+            this.btnHuy.BorderThickness = 2;
+            this.btnHuy.CheckedState.Parent = this.btnHuy;
+            this.btnHuy.CustomImages.Parent = this.btnHuy;
+            this.btnHuy.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.btnHuy.FillColor2 = System.Drawing.Color.WhiteSmoke;
+            this.btnHuy.Font = new System.Drawing.Font("Arial Black", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(165)))), ((int)(((byte)(71)))));
+            this.btnHuy.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnHuy.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnHuy.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(152)))), ((int)(((byte)(0)))));
+            this.btnHuy.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnHuy.HoverState.Parent = this.btnHuy;
+            this.btnHuy.Location = new System.Drawing.Point(1071, 502);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(238)))), ((int)(((byte)(228)))));
+            this.btnHuy.ShadowDecoration.BorderRadius = 12;
+            this.btnHuy.ShadowDecoration.Color = System.Drawing.Color.Silver;
+            this.btnHuy.ShadowDecoration.Depth = 15;
+            this.btnHuy.ShadowDecoration.Parent = this.btnHuy;
+            this.btnHuy.Size = new System.Drawing.Size(221, 40);
+            this.btnHuy.TabIndex = 68;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
-            // btLuuDS
+            // btnTraSach1
             // 
-            this.btLuuDS.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btLuuDS.BackColor = System.Drawing.Color.Transparent;
-            this.btLuuDS.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(165)))), ((int)(((byte)(71)))));
-            this.btLuuDS.BorderRadius = 13;
-            this.btLuuDS.BorderThickness = 2;
-            this.btLuuDS.CheckedState.Parent = this.btLuuDS;
-            this.btLuuDS.CustomImages.Parent = this.btLuuDS;
-            this.btLuuDS.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.btLuuDS.FillColor2 = System.Drawing.Color.WhiteSmoke;
-            this.btLuuDS.Font = new System.Drawing.Font("Arial Black", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btLuuDS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(165)))), ((int)(((byte)(71)))));
-            this.btLuuDS.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(97)))), ((int)(((byte)(234)))));
-            this.btLuuDS.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(97)))), ((int)(((byte)(234)))));
-            this.btLuuDS.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(97)))), ((int)(((byte)(234)))));
-            this.btLuuDS.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btLuuDS.HoverState.Parent = this.btLuuDS;
-            this.btLuuDS.Location = new System.Drawing.Point(474, 502);
-            this.btLuuDS.Name = "btLuuDS";
-            this.btLuuDS.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(238)))), ((int)(((byte)(228)))));
-            this.btLuuDS.ShadowDecoration.BorderRadius = 12;
-            this.btLuuDS.ShadowDecoration.Color = System.Drawing.Color.Silver;
-            this.btLuuDS.ShadowDecoration.Depth = 15;
-            this.btLuuDS.ShadowDecoration.Parent = this.btLuuDS;
-            this.btLuuDS.Size = new System.Drawing.Size(221, 40);
-            this.btLuuDS.TabIndex = 67;
-            this.btLuuDS.Text = "Lưu ";
+            this.btnTraSach1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnTraSach1.BackColor = System.Drawing.Color.Transparent;
+            this.btnTraSach1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(165)))), ((int)(((byte)(71)))));
+            this.btnTraSach1.BorderRadius = 13;
+            this.btnTraSach1.BorderThickness = 2;
+            this.btnTraSach1.CheckedState.Parent = this.btnTraSach1;
+            this.btnTraSach1.CustomImages.Parent = this.btnTraSach1;
+            this.btnTraSach1.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.btnTraSach1.FillColor2 = System.Drawing.Color.WhiteSmoke;
+            this.btnTraSach1.Font = new System.Drawing.Font("Arial Black", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTraSach1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(165)))), ((int)(((byte)(71)))));
+            this.btnTraSach1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(97)))), ((int)(((byte)(234)))));
+            this.btnTraSach1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(97)))), ((int)(((byte)(234)))));
+            this.btnTraSach1.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(97)))), ((int)(((byte)(234)))));
+            this.btnTraSach1.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnTraSach1.HoverState.Parent = this.btnTraSach1;
+            this.btnTraSach1.Location = new System.Drawing.Point(474, 502);
+            this.btnTraSach1.Name = "btnTraSach1";
+            this.btnTraSach1.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(238)))), ((int)(((byte)(228)))));
+            this.btnTraSach1.ShadowDecoration.BorderRadius = 12;
+            this.btnTraSach1.ShadowDecoration.Color = System.Drawing.Color.Silver;
+            this.btnTraSach1.ShadowDecoration.Depth = 15;
+            this.btnTraSach1.ShadowDecoration.Parent = this.btnTraSach1;
+            this.btnTraSach1.Size = new System.Drawing.Size(221, 40);
+            this.btnTraSach1.TabIndex = 67;
+            this.btnTraSach1.Text = "Trả Sách";
+            this.btnTraSach1.Click += new System.EventHandler(this.btnTraSach1_Click);
+            // 
+            // btnCheck
+            // 
+            this.btnCheck.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnCheck.BackColor = System.Drawing.Color.Transparent;
+            this.btnCheck.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(165)))), ((int)(((byte)(71)))));
+            this.btnCheck.BorderRadius = 13;
+            this.btnCheck.BorderThickness = 2;
+            this.btnCheck.CheckedState.Parent = this.btnCheck;
+            this.btnCheck.CustomImages.Parent = this.btnCheck;
+            this.btnCheck.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCheck.FillColor2 = System.Drawing.Color.WhiteSmoke;
+            this.btnCheck.Font = new System.Drawing.Font("Arial Black", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheck.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(165)))), ((int)(((byte)(71)))));
+            this.btnCheck.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(97)))), ((int)(((byte)(234)))));
+            this.btnCheck.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(97)))), ((int)(((byte)(234)))));
+            this.btnCheck.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(97)))), ((int)(((byte)(234)))));
+            this.btnCheck.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnCheck.HoverState.Parent = this.btnCheck;
+            this.btnCheck.Location = new System.Drawing.Point(744, 502);
+            this.btnCheck.Name = "btnCheck";
+            this.btnCheck.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(238)))), ((int)(((byte)(228)))));
+            this.btnCheck.ShadowDecoration.BorderRadius = 12;
+            this.btnCheck.ShadowDecoration.Color = System.Drawing.Color.Silver;
+            this.btnCheck.ShadowDecoration.Depth = 15;
+            this.btnCheck.ShadowDecoration.Parent = this.btnCheck;
+            this.btnCheck.Size = new System.Drawing.Size(221, 40);
+            this.btnCheck.TabIndex = 69;
+            this.btnCheck.Text = "Kiểm Tra";
+            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             // 
             // TraSach
             // 
@@ -717,8 +752,9 @@ namespace Quan_Ly_Thu_Vien
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
             this.ClientSize = new System.Drawing.Size(1708, 961);
-            this.Controls.Add(this.btHuy);
-            this.Controls.Add(this.btLuuDS);
+            this.Controls.Add(this.btnCheck);
+            this.Controls.Add(this.btnHuy);
+            this.Controls.Add(this.btnTraSach1);
             this.Controls.Add(this.bunifuCustomLabel5);
             this.Controls.Add(this.guna2GradientPanel14);
             this.Controls.Add(this.bunifuCustomLabel1);
@@ -729,6 +765,7 @@ namespace Quan_Ly_Thu_Vien
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TraSach";
             this.Text = "TraSach";
+            this.Load += new System.EventHandler(this.TraSach_Load);
             this.guna2GradientPanel5.ResumeLayout(false);
             this.guna2GradientPanel5.PerformLayout();
             this.guna2GradientPanel3.ResumeLayout(false);
@@ -780,7 +817,8 @@ namespace Quan_Ly_Thu_Vien
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel14;
         private Guna.UI2.WinForms.Guna2DataGridView dtgrdView_Tra;
-        private Guna.UI2.WinForms.Guna2GradientButton btHuy;
-        private Guna.UI2.WinForms.Guna2GradientButton btLuuDS;
+        private Guna.UI2.WinForms.Guna2GradientButton btnHuy;
+        private Guna.UI2.WinForms.Guna2GradientButton btnTraSach1;
+        private Guna.UI2.WinForms.Guna2GradientButton btnCheck;
     }
 }

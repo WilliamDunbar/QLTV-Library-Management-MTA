@@ -32,7 +32,6 @@ namespace Quan_Ly_Thu_Vien
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Trangchu));
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.accountChip = new FontAwesome.Sharp.IconButton();
             this.ShadowBar = new System.Windows.Forms.Panel();
@@ -40,8 +39,8 @@ namespace Quan_Ly_Thu_Vien
             this.exitbutton = new FontAwesome.Sharp.IconButton();
             this.FullScreen = new FontAwesome.Sharp.IconButton();
             this.panelDesktop = new System.Windows.Forms.Panel();
+            this.SliderPicture = new System.Windows.Forms.PictureBox();
             this.MTA = new System.Windows.Forms.PictureBox();
-            this.iconBtDangXuat = new FontAwesome.Sharp.IconButton();
             this.iconBtThongKe = new FontAwesome.Sharp.IconButton();
             this.iconBtTraSach = new FontAwesome.Sharp.IconButton();
             this.iconBtMuonSach = new FontAwesome.Sharp.IconButton();
@@ -49,8 +48,12 @@ namespace Quan_Ly_Thu_Vien
             this.panel1 = new System.Windows.Forms.Panel();
             this.iconBt_DocGia = new FontAwesome.Sharp.IconButton();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.guna2HtmlToolTip1 = new Guna.UI2.WinForms.Guna2HtmlToolTip();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.ShadowBar.SuspendLayout();
+            this.panelDesktop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SliderPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MTA)).BeginInit();
             this.panel1.SuspendLayout();
             this.panelMenu.SuspendLayout();
@@ -182,6 +185,7 @@ namespace Quan_Ly_Thu_Vien
             // panelDesktop
             // 
             this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
+            this.panelDesktop.Controls.Add(this.SliderPicture);
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelDesktop.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(249)))), ((int)(((byte)(181)))));
@@ -190,6 +194,19 @@ namespace Quan_Ly_Thu_Vien
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.Size = new System.Drawing.Size(1708, 961);
             this.panelDesktop.TabIndex = 6;
+            // 
+            // SliderPicture
+            // 
+            this.SliderPicture.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.SliderPicture.Image = ((System.Drawing.Image)(resources.GetObject("SliderPicture.Image")));
+            this.SliderPicture.Location = new System.Drawing.Point(32, 162);
+            this.SliderPicture.Name = "SliderPicture";
+            this.SliderPicture.Size = new System.Drawing.Size(1637, 684);
+            this.SliderPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.SliderPicture.TabIndex = 0;
+            this.SliderPicture.TabStop = false;
             // 
             // MTA
             // 
@@ -204,27 +221,6 @@ namespace Quan_Ly_Thu_Vien
             this.MTA.TabStop = false;
             this.MTA.Click += new System.EventHandler(this.MTA_Click);
             // 
-            // iconBtDangXuat
-            // 
-            this.iconBtDangXuat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconBtDangXuat.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.iconBtDangXuat.FlatAppearance.BorderSize = 0;
-            this.iconBtDangXuat.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
-            this.iconBtDangXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconBtDangXuat.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconBtDangXuat.ForeColor = System.Drawing.SystemColors.Control;
-            this.iconBtDangXuat.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
-            this.iconBtDangXuat.IconColor = System.Drawing.Color.WhiteSmoke;
-            this.iconBtDangXuat.IconSize = 50;
-            this.iconBtDangXuat.Location = new System.Drawing.Point(0, 890);
-            this.iconBtDangXuat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.iconBtDangXuat.Name = "iconBtDangXuat";
-            this.iconBtDangXuat.Rotation = 0D;
-            this.iconBtDangXuat.Size = new System.Drawing.Size(76, 71);
-            this.iconBtDangXuat.TabIndex = 6;
-            this.iconBtDangXuat.UseVisualStyleBackColor = true;
-            this.iconBtDangXuat.Click += new System.EventHandler(this.iconBtDangXuat_Click);
-            // 
             // iconBtThongKe
             // 
             this.iconBtThongKe.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -236,12 +232,13 @@ namespace Quan_Ly_Thu_Vien
             this.iconBtThongKe.IconChar = FontAwesome.Sharp.IconChar.ChartLine;
             this.iconBtThongKe.IconColor = System.Drawing.Color.WhiteSmoke;
             this.iconBtThongKe.IconSize = 50;
-            this.iconBtThongKe.Location = new System.Drawing.Point(0, 462);
+            this.iconBtThongKe.Location = new System.Drawing.Point(0, 537);
             this.iconBtThongKe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.iconBtThongKe.Name = "iconBtThongKe";
             this.iconBtThongKe.Rotation = 0D;
             this.iconBtThongKe.Size = new System.Drawing.Size(76, 75);
             this.iconBtThongKe.TabIndex = 5;
+            this.guna2HtmlToolTip1.SetToolTip(this.iconBtThongKe, "Thống kê");
             this.iconBtThongKe.UseVisualStyleBackColor = true;
             this.iconBtThongKe.Click += new System.EventHandler(this.iconBtThongKe_Click);
             // 
@@ -256,12 +253,13 @@ namespace Quan_Ly_Thu_Vien
             this.iconBtTraSach.IconChar = FontAwesome.Sharp.IconChar.CloudDownloadAlt;
             this.iconBtTraSach.IconColor = System.Drawing.Color.WhiteSmoke;
             this.iconBtTraSach.IconSize = 50;
-            this.iconBtTraSach.Location = new System.Drawing.Point(0, 387);
+            this.iconBtTraSach.Location = new System.Drawing.Point(0, 462);
             this.iconBtTraSach.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.iconBtTraSach.Name = "iconBtTraSach";
             this.iconBtTraSach.Rotation = 0D;
             this.iconBtTraSach.Size = new System.Drawing.Size(76, 75);
             this.iconBtTraSach.TabIndex = 4;
+            this.guna2HtmlToolTip1.SetToolTip(this.iconBtTraSach, "Trả sách");
             this.iconBtTraSach.UseVisualStyleBackColor = true;
             this.iconBtTraSach.Click += new System.EventHandler(this.iconBtTraSach_Click);
             // 
@@ -276,12 +274,13 @@ namespace Quan_Ly_Thu_Vien
             this.iconBtMuonSach.IconChar = FontAwesome.Sharp.IconChar.CloudUploadAlt;
             this.iconBtMuonSach.IconColor = System.Drawing.Color.WhiteSmoke;
             this.iconBtMuonSach.IconSize = 50;
-            this.iconBtMuonSach.Location = new System.Drawing.Point(0, 312);
+            this.iconBtMuonSach.Location = new System.Drawing.Point(0, 387);
             this.iconBtMuonSach.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.iconBtMuonSach.Name = "iconBtMuonSach";
             this.iconBtMuonSach.Rotation = 0D;
             this.iconBtMuonSach.Size = new System.Drawing.Size(76, 75);
             this.iconBtMuonSach.TabIndex = 3;
+            this.guna2HtmlToolTip1.SetToolTip(this.iconBtMuonSach, "Mượn sách");
             this.iconBtMuonSach.UseVisualStyleBackColor = true;
             this.iconBtMuonSach.Click += new System.EventHandler(this.iconBtMuonSach_Click);
             // 
@@ -296,19 +295,19 @@ namespace Quan_Ly_Thu_Vien
             this.iconBt_Sach.IconChar = FontAwesome.Sharp.IconChar.Database;
             this.iconBt_Sach.IconColor = System.Drawing.Color.WhiteSmoke;
             this.iconBt_Sach.IconSize = 45;
-            this.iconBt_Sach.Location = new System.Drawing.Point(0, 237);
+            this.iconBt_Sach.Location = new System.Drawing.Point(0, 312);
             this.iconBt_Sach.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.iconBt_Sach.Name = "iconBt_Sach";
             this.iconBt_Sach.Rotation = 0D;
             this.iconBt_Sach.Size = new System.Drawing.Size(76, 75);
             this.iconBt_Sach.TabIndex = 2;
+            this.guna2HtmlToolTip1.SetToolTip(this.iconBt_Sach, "Quản lý đầu sách");
             this.iconBt_Sach.UseVisualStyleBackColor = true;
             this.iconBt_Sach.Click += new System.EventHandler(this.iconBt_Sach_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(179)))), ((int)(((byte)(99)))));
-            this.panel1.Controls.Add(this.iconBtDangXuat);
             this.panel1.Controls.Add(this.iconBtThongKe);
             this.panel1.Controls.Add(this.iconBtTraSach);
             this.panel1.Controls.Add(this.iconBtMuonSach);
@@ -334,12 +333,13 @@ namespace Quan_Ly_Thu_Vien
             this.iconBt_DocGia.IconChar = FontAwesome.Sharp.IconChar.Users;
             this.iconBt_DocGia.IconColor = System.Drawing.Color.WhiteSmoke;
             this.iconBt_DocGia.IconSize = 60;
-            this.iconBt_DocGia.Location = new System.Drawing.Point(0, 162);
+            this.iconBt_DocGia.Location = new System.Drawing.Point(0, 237);
             this.iconBt_DocGia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.iconBt_DocGia.Name = "iconBt_DocGia";
             this.iconBt_DocGia.Rotation = 0D;
             this.iconBt_DocGia.Size = new System.Drawing.Size(76, 75);
             this.iconBt_DocGia.TabIndex = 1;
+            this.guna2HtmlToolTip1.SetToolTip(this.iconBt_DocGia, "Quản lý học viên");
             this.iconBt_DocGia.UseVisualStyleBackColor = true;
             this.iconBt_DocGia.Click += new System.EventHandler(this.iconBt_DocGia_Click);
             // 
@@ -350,8 +350,23 @@ namespace Quan_Ly_Thu_Vien
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(76, 162);
+            this.panelMenu.Size = new System.Drawing.Size(76, 237);
             this.panelMenu.TabIndex = 0;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 2000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // guna2HtmlToolTip1
+            // 
+            this.guna2HtmlToolTip1.AllowLinksHandling = true;
+            this.guna2HtmlToolTip1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlToolTip1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(0)))));
+            this.guna2HtmlToolTip1.MaximumSize = new System.Drawing.Size(0, 0);
+            this.guna2HtmlToolTip1.TitleFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlToolTip1.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(0)))));
             // 
             // Trangchu
             // 
@@ -364,13 +379,15 @@ namespace Quan_Ly_Thu_Vien
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(249)))), ((int)(((byte)(181)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Trangchu";
-            this.Opacity = 0.95D;
+            this.Opacity = 0.97D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Trangchu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.ShadowBar.ResumeLayout(false);
             this.ShadowBar.PerformLayout();
+            this.panelDesktop.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.SliderPicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MTA)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
@@ -381,7 +398,6 @@ namespace Quan_Ly_Thu_Vien
         #endregion
 
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
-        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private FontAwesome.Sharp.IconButton accountChip;
         private System.Windows.Forms.Panel ShadowBar;
@@ -390,7 +406,6 @@ namespace Quan_Ly_Thu_Vien
         private FontAwesome.Sharp.IconButton FullScreen;
         public System.Windows.Forms.Panel panelDesktop;
         private System.Windows.Forms.PictureBox MTA;
-        private FontAwesome.Sharp.IconButton iconBtDangXuat;
         private System.Windows.Forms.Panel panel1;
         private FontAwesome.Sharp.IconButton iconBt_DocGia;
         private System.Windows.Forms.Panel panelMenu;
@@ -398,6 +413,9 @@ namespace Quan_Ly_Thu_Vien
         public FontAwesome.Sharp.IconButton iconBtTraSach;
         public FontAwesome.Sharp.IconButton iconBtMuonSach;
         public FontAwesome.Sharp.IconButton iconBt_Sach;
+        private System.Windows.Forms.PictureBox SliderPicture;
+        private System.Windows.Forms.Timer timer1;
+        private Guna.UI2.WinForms.Guna2HtmlToolTip guna2HtmlToolTip1;
     }
 }
 

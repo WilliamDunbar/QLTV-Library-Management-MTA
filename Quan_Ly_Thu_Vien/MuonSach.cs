@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 using System.Windows.Forms;
 using Quan_Ly_Thu_Vien.Database;
 
@@ -18,31 +19,20 @@ namespace Quan_Ly_Thu_Vien
         public string MaMT0, MaSach0, MaDG0, NgayMuon0, HanTra0;
         public int hieumuon, hieutra, catthangmuon, catngaymuon, catngaytra, catthangtra, songaymuon, sothangmuon, sonammuon, songaytra, sothangtra, sonamtra, kq;
 
-        private void cboMaDG0_SelectedIndexChanged(object sender, EventArgs e)
+
+
+        private void cboMaDG0_TextChanged(object sender, EventArgs e)
         {
             Model_QuanLi_ThuVien View_SachMuon = new Model_QuanLi_ThuVien();
-            SqlParameter idParam = new SqlParameter { ParameterName = "MaDocGia", Value = cboMaDG0.SelectedValue.ToString() };
-            SqlParameter idParam1 = new SqlParameter { ParameterName = "MaDocGia", Value = cboMaDG0.SelectedValue.ToString() };
-            //  var lstMuon = View_SachMuon.SoSachMuons.SqlQuery(" exec showSoSachMuon @MaDocGia", idParam).ToList();
-            var lstMuon = View_SachMuon.SoSachMuons.SqlQuery("exec showSoSachMuon @MaDocGia", idParam).ToList();
+            txtMaDocGia.Text = cboMaDG0.Text;
+            ////////////
+            
+            var listSoSachMuon = View_SachMuon.MuonTras.Where(p => p.MaDocGia == cboMaDG0.Text && p.DaTra == false).ToList();
+            txtSachMuon.Text = listSoSachMuon.Count.ToString();
 
-            ///// Show thông ti mượn sách
-            if (lstMuon.Count == 0 && cboMaDG0.SelectedValue.ToString() == "QLTVWFDatabase.ThongTinDocGia") { txtSachMuon.Text = "0"; txtMaDocGia.Text = ""; }
-            else if (lstMuon.Count == 0)
-            { txtSachMuon.Text = "0"; }
-
-
-            else
-            {
-                txtMaDocGia.Text = lstMuon[0].MaDocGia.ToString();
-
-                txtSachMuon.Text = lstMuon[0].Muon.ToString();
-
-            }
-            var lstviPham = View_SachMuon.ViPhamCaNhans.SqlQuery("exec showViPhamCaNhan @MaDocGia", idParam1).ToList();
-            if (lstviPham.Count == 0) { txtViPham.Text = "0"; }
-            else txtViPham.Text = lstviPham[0].ViPham.ToString();
-            /// kiểm tra thông tin Mượn sách
+            /////////////
+            var listSoLuotViPham = from kq in View_SachMuon.XuLyViPhams where kq.MaDocGia == cboMaDG0.Text select kq.LyDo;
+            txtViPham.Text = listSoLuotViPham.ToList().Count.ToString();
         }
 
         private void txtNDTimKiem_TextChanged(object sender, EventArgs e)
@@ -53,6 +43,10 @@ namespace Quan_Ly_Thu_Vien
             btnHuy0.Enabled = false;
             if (radMaDG.Checked)
             {
+                if (txtNDTimKiem.Text == "")
+                {
+                    btnNhap.Enabled = true; btnGiaHan.Enabled = true;
+                }
                 SqlParameter idParam = new SqlParameter { ParameterName = "NoiDung", Value = txtNDTimKiem.Text };
                 Model_QuanLi_ThuVien MtV1 = new Model_QuanLi_ThuVien();
                 var lstTimkiemDocGia = MtV1.ThongTinMuonTras.SqlQuery("TimKiemMaDG @NoiDung", idParam).ToList();
@@ -62,6 +56,10 @@ namespace Quan_Ly_Thu_Vien
             }
             else if (radMaSach.Checked)
             {
+                if (txtNDTimKiem.Text == "")
+                {
+                    btnNhap.Enabled = true; btnGiaHan.Enabled = true;
+                }
                 SqlParameter idParam = new SqlParameter { ParameterName = "NoiDung", Value = txtNDTimKiem.Text };
                 Model_QuanLi_ThuVien MtV1 = new Model_QuanLi_ThuVien();
                 var lstTimkiemSach = MtV1.ThongTinMuonTras.SqlQuery("TimKiemMaSach @NoiDung", idParam).ToList();
@@ -72,9 +70,10 @@ namespace Quan_Ly_Thu_Vien
 
         private void MuonSach_Load(object sender, EventArgs e)
         {
+            load_MuonTra();
             layMaSach_DocGia();
 
-            setControlsMuon(true);
+            setControlsMuon(false);
 
             cboMaSach0.Text = "";
             cboMaDG0.Text = "";
@@ -89,7 +88,10 @@ namespace Quan_Ly_Thu_Vien
             btnChoMuon0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center; ;
             btnChoMuon0.Enabled = true;
             xuly = 0;
+            radMaDG.Checked = true;
+
         }
+
 
         public string ngaymuon, thangmuon, nammuon, ngaytra, thangtra, namtra, ngaydgmuon, ngaydgtra;
 
@@ -193,7 +195,7 @@ namespace Quan_Ly_Thu_Vien
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn hạn mượn  lớn hơn ngày mượn.", "Thông Báo");
+                MessageBox.Show("Xem lại thời gian cho mượn.", "Thông Báo");
             }
         }
 
@@ -220,30 +222,34 @@ namespace Quan_Ly_Thu_Vien
             }
             else
             {
-                try
+                if (SoSanhHanTra(dtmNgayHetHan0.Text, dtmNgayMuon0.Text) == 1)
                 {
-                    Model_QuanLi_ThuVien MtV2 = new Model_QuanLi_ThuVien();
-                    SqlParameter[] idParam =
-                       { new SqlParameter { ParameterName="MaSach", Value=cboMaSach0.Text },
+                    try
+                    {
+                        Model_QuanLi_ThuVien MtV2 = new Model_QuanLi_ThuVien();
+                        SqlParameter[] idParam =
+                           { new SqlParameter { ParameterName="MaSach", Value=cboMaSach0.Text },
                 new SqlParameter { ParameterName = "MaDocGia", Value = cboMaDG0.Text },
                 new SqlParameter { ParameterName = "MaNVMuon", Value = MaNVMtxt0.Text },
                 new SqlParameter { ParameterName = "NgayMuon", Value = dtmNgayMuon0.Text  },
                  new SqlParameter { ParameterName = "NgayHanTra", Value = dtmNgayHetHan0.Text },
 
                 };
-                    int Check_Sach = MtV2.Database.ExecuteSqlCommand("MuonMoiSach @MaSach,@MaDocGia,@MaNVMuon,@NgayMuon,@NgayHanTra", idParam);
-                    if (Check_Sach == -1)
-                        MessageBox.Show("Cuốn sách đanng cho mượn .Hãy mượn cuốn sách khác");
-                    else
-                    {
-                        MessageBox.Show("Cho Mươn thành công");
+                        int Check_Sach = MtV2.Database.ExecuteSqlCommand("MuonMoiSach @MaSach,@MaDocGia,@MaNVMuon,@NgayMuon,@NgayHanTra", idParam);
+                        if (Check_Sach == -1)
+                            MessageBox.Show("Cuốn sách đanng cho mượn .Hãy mượn cuốn sách khác");
+                        else
+                        {
+                            MessageBox.Show("Cho Mươn thành công");
+                        }
+                        load_MuonTra();
                     }
-                    load_MuonTra();
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Lỗi Hệ thống");
+                    }
                 }
-                catch (Exception)
-                {
-                    MessageBox.Show("Lỗi Hệ thống");
-                }
+                else { MessageBox.Show("Xem lại thời gian cho mượn"); }
             }
 
         }
@@ -281,22 +287,37 @@ namespace Quan_Ly_Thu_Vien
 
             cboMaSach0.Text = "";
             cboMaDG0.Text = "";
-            MaNVMtxt0.Text = "";
+            MaNVMtxt0.Text = Login.MaNguoiDung;
             MuonTratxt0.Text = "";
             MuonTratxt0.Enabled = false;
             btnHuy0.Enabled = true;
             btnGiaHan.Enabled = false;
-            //  cboTinhTrang0.Text = "False";
-            //  cboTinhTrang0.Enabled = false;
+
             btnChoMuon0.Text = "Cho Mượn";
             btnChoMuon0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center; ;
             btnChoMuon0.Enabled = true;
             xuly = 0;
+
         }
 
         private void btnGiaHan_Click(object sender, EventArgs e)
         {
+            setControlsMuon(true);
+            MuonTratxt0.Enabled = false;
+            cboMaDG0.Enabled = false;
+            cboMaSach0.Enabled = false;
 
+
+            MaNVMtxt0.Enabled = false;
+            ////////////
+
+            btnNhap.Enabled = false;
+            btnChoMuon0.Text = "Lưu";
+            btnChoMuon0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            btnChoMuon0.Enabled = true;
+            btnGiaHan.Enabled = false;
+            btnHuy0.Enabled = true;
+            xuly = 1;
         }
 
         private void btnHuy0_Click(object sender, EventArgs e)

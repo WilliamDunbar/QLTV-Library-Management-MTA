@@ -103,9 +103,9 @@ namespace Quan_Ly_Thu_Vien
             using (Model_QuanLi_ThuVien qltv = new Model_QuanLi_ThuVien())
             {
 
-                if (DangNhap.ThuThuOrDocGia == true)
+                if (Login.ThuThuOrDocGia == true)
                 {
-                    TaiKhoanNV tkNV = qltv.TaiKhoanNVs.Where(p => p.MaNhanVien == DangNhap.MaNguoiDung).FirstOrDefault();
+                    TaiKhoanNV tkNV = qltv.TaiKhoanNVs.Where(p => p.MaNhanVien == Login.MaNguoiDung).FirstOrDefault();
                     if (txbTenDangNhap.Text == "") MessageBox.Show("Chua nhap ten tai khoan!");
                     else if (txbMkCu.Text == "") MessageBox.Show("Chua nhap mat khau cu!");
                     else if (txbMkMoi.Text == "") MessageBox.Show("Chua nhap mat khau moi!");
@@ -114,13 +114,13 @@ namespace Quan_Ly_Thu_Vien
                     else if (txbMkMoi.Text != txbNhapLaiMk.Text) MessageBox.Show("Nhap mat khau moi khong dung!");
                     else
                     {
-                        qltv.Database.ExecuteSqlCommand($"exec SuaTaiKhoanNV '{DangNhap.MaNguoiDung}','{txbMkMoi.Text}'");
+                        qltv.Database.ExecuteSqlCommand($"exec SuaTaiKhoanNV '{Login.MaNguoiDung}','{txbMkMoi.Text}'");
                         MessageBox.Show("Doi mat khau thanh cong!");
                     }
                 }
-                else if (DangNhap.ThuThuOrDocGia == false)
+                else if (Login.ThuThuOrDocGia == false)
                 {
-                    TaiKhoanDG tkDG = qltv.TaiKhoanDGs.Where(p => p.MaDocGia == DangNhap.MaNguoiDung).FirstOrDefault();
+                    TaiKhoanDG tkDG = qltv.TaiKhoanDGs.Where(p => p.MaDocGia == Login.MaNguoiDung).FirstOrDefault();
                     if (txbTenDangNhap.Text == "") MessageBox.Show("Chua nhap ten tai khoan!");
                     else if (txbMkCu.Text == "") MessageBox.Show("Chua nhap mat khau cu!");
                     else if (txbMkMoi.Text == "") MessageBox.Show("Chua nhap mat khau moi!");
@@ -129,7 +129,7 @@ namespace Quan_Ly_Thu_Vien
                     else if (txbMkMoi.Text != txbNhapLaiMk.Text) MessageBox.Show("Nhap mat khau moi khong dung!");
                     else
                     {
-                        qltv.Database.ExecuteSqlCommand($"exec SuaTaiKhoanDG '{DangNhap.MaNguoiDung}','{txbMkMoi.Text}'");
+                        qltv.Database.ExecuteSqlCommand($"exec SuaTaiKhoanDG '{Login.MaNguoiDung}','{txbMkMoi.Text}'");
                         MessageBox.Show("Doi mat khau thanh cong!");
                     }
                 }

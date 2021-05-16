@@ -29,10 +29,10 @@ namespace Quan_Ly_Thu_Vien
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cboMaDG0 = new System.Windows.Forms.ComboBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -58,23 +58,22 @@ namespace Quan_Ly_Thu_Vien
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.guna2GradientPanel3 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.txtNDTimKiem = new System.Windows.Forms.TextBox();
-            this.dtmNgayMuon0 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2GradientPanel11 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.dtmNgayHetHan0 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2GradientPanel7 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.searchbarlabel = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.timkiembutton = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.MaNVMtxt0 = new System.Windows.Forms.ComboBox();
             this.MuonTratxt0 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.guna2GradientPanel6 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.MaNVMtxt0 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnHuy0 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnGiaHan = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnChoMuon0 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnNhap = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.dtmNgayMuon0 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2GradientPanel14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgrdView_Muon)).BeginInit();
             this.guna2GradientPanel5.SuspendLayout();
@@ -96,7 +95,7 @@ namespace Quan_Ly_Thu_Vien
             this.cboMaDG0.Name = "cboMaDG0";
             this.cboMaDG0.Size = new System.Drawing.Size(200, 24);
             this.cboMaDG0.TabIndex = 42;
-            this.cboMaDG0.SelectedIndexChanged += new System.EventHandler(this.cboMaDG0_SelectedIndexChanged);
+            this.cboMaDG0.TextChanged += new System.EventHandler(this.cboMaDG0_TextChanged);
             // 
             // textBox6
             // 
@@ -162,8 +161,8 @@ namespace Quan_Ly_Thu_Vien
             this.dtgrdView_Muon.AllowUserToDeleteRows = false;
             this.dtgrdView_Muon.AllowUserToResizeColumns = false;
             this.dtgrdView_Muon.AllowUserToResizeRows = false;
-            dataGridViewCellStyle33.BackColor = System.Drawing.Color.White;
-            this.dtgrdView_Muon.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dtgrdView_Muon.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgrdView_Muon.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -172,39 +171,39 @@ namespace Quan_Ly_Thu_Vien
             this.dtgrdView_Muon.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgrdView_Muon.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dtgrdView_Muon.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle34.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(254)))), ((int)(((byte)(251)))));
-            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(168)))));
-            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgrdView_Muon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(254)))), ((int)(((byte)(251)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(168)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgrdView_Muon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dtgrdView_Muon.ColumnHeadersHeight = 30;
             this.dtgrdView_Muon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dtgrdView_Muon.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle35.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle35.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(49)))), ((int)(((byte)(1)))));
-            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(255)))), ((int)(((byte)(212)))));
-            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgrdView_Muon.DefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(49)))), ((int)(((byte)(1)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(255)))), ((int)(((byte)(212)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgrdView_Muon.DefaultCellStyle = dataGridViewCellStyle3;
             this.dtgrdView_Muon.EnableHeadersVisualStyles = false;
             this.dtgrdView_Muon.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(242)))), ((int)(((byte)(117)))));
             this.dtgrdView_Muon.Location = new System.Drawing.Point(2, 6);
             this.dtgrdView_Muon.Margin = new System.Windows.Forms.Padding(2);
             this.dtgrdView_Muon.Name = "dtgrdView_Muon";
             this.dtgrdView_Muon.ReadOnly = true;
-            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle36.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle36.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(168)))));
-            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(168)))));
-            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgrdView_Muon.RowHeadersDefaultCellStyle = dataGridViewCellStyle36;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(168)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(168)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgrdView_Muon.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dtgrdView_Muon.RowHeadersVisible = false;
             this.dtgrdView_Muon.RowHeadersWidth = 62;
             this.dtgrdView_Muon.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -528,24 +527,6 @@ namespace Quan_Ly_Thu_Vien
             this.txtNDTimKiem.TabIndex = 3;
             this.txtNDTimKiem.TextChanged += new System.EventHandler(this.txtNDTimKiem_TextChanged);
             // 
-            // dtmNgayMuon0
-            // 
-            this.dtmNgayMuon0.CheckedState.Parent = this.dtmNgayMuon0;
-            this.dtmNgayMuon0.FillColor = System.Drawing.Color.Empty;
-            this.dtmNgayMuon0.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtmNgayMuon0.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
-            this.dtmNgayMuon0.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtmNgayMuon0.HoverState.Parent = this.dtmNgayMuon0;
-            this.dtmNgayMuon0.Location = new System.Drawing.Point(654, 40);
-            this.dtmNgayMuon0.Margin = new System.Windows.Forms.Padding(2);
-            this.dtmNgayMuon0.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtmNgayMuon0.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtmNgayMuon0.Name = "dtmNgayMuon0";
-            this.dtmNgayMuon0.ShadowDecoration.Parent = this.dtmNgayMuon0;
-            this.dtmNgayMuon0.Size = new System.Drawing.Size(200, 16);
-            this.dtmNgayMuon0.TabIndex = 28;
-            this.dtmNgayMuon0.Value = new System.DateTime(2021, 4, 29, 1, 35, 3, 737);
-            // 
             // guna2GradientPanel11
             // 
             this.guna2GradientPanel11.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
@@ -611,7 +592,6 @@ namespace Quan_Ly_Thu_Vien
             this.guna2GradientPanel1.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
             this.guna2GradientPanel1.BorderThickness = 2;
             this.guna2GradientPanel1.Controls.Add(this.bunifuCustomLabel3);
-            this.guna2GradientPanel1.Controls.Add(this.timkiembutton);
             this.guna2GradientPanel1.Controls.Add(this.searchbarlabel);
             this.guna2GradientPanel1.Controls.Add(this.guna2GradientPanel3);
             this.guna2GradientPanel1.Controls.Add(this.bunifuCustomLabel2);
@@ -636,48 +616,6 @@ namespace Quan_Ly_Thu_Vien
             this.bunifuCustomLabel3.TabIndex = 41;
             this.bunifuCustomLabel3.Text = "Bộ lọc tìm kiếm";
             this.bunifuCustomLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // timkiembutton
-            // 
-            this.timkiembutton.BackColor = System.Drawing.Color.Transparent;
-            this.timkiembutton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(165)))), ((int)(((byte)(71)))));
-            this.timkiembutton.BorderRadius = 13;
-            this.timkiembutton.BorderThickness = 2;
-            this.timkiembutton.CheckedState.Parent = this.timkiembutton;
-            this.timkiembutton.CustomImages.Parent = this.timkiembutton;
-            this.timkiembutton.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.timkiembutton.FillColor2 = System.Drawing.Color.WhiteSmoke;
-            this.timkiembutton.Font = new System.Drawing.Font("Arial Black", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timkiembutton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(165)))), ((int)(((byte)(71)))));
-            this.timkiembutton.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(97)))), ((int)(((byte)(234)))));
-            this.timkiembutton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(97)))), ((int)(((byte)(234)))));
-            this.timkiembutton.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(97)))), ((int)(((byte)(234)))));
-            this.timkiembutton.HoverState.ForeColor = System.Drawing.Color.White;
-            this.timkiembutton.HoverState.Parent = this.timkiembutton;
-            this.timkiembutton.Location = new System.Drawing.Point(1223, 27);
-            this.timkiembutton.Name = "timkiembutton";
-            this.timkiembutton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(238)))), ((int)(((byte)(228)))));
-            this.timkiembutton.ShadowDecoration.BorderRadius = 12;
-            this.timkiembutton.ShadowDecoration.Color = System.Drawing.Color.Silver;
-            this.timkiembutton.ShadowDecoration.Depth = 15;
-            this.timkiembutton.ShadowDecoration.Parent = this.timkiembutton;
-            this.timkiembutton.Size = new System.Drawing.Size(200, 35);
-            this.timkiembutton.TabIndex = 70;
-            this.timkiembutton.Text = "Tìm kiếm";
-            this.timkiembutton.Click += new System.EventHandler(this.timkiembutton_Click);
-            // 
-            // MaNVMtxt0
-            // 
-            this.MaNVMtxt0.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
-            this.MaNVMtxt0.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.MaNVMtxt0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MaNVMtxt0.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(237)))), ((int)(((byte)(15)))));
-            this.MaNVMtxt0.FormattingEnabled = true;
-            this.MaNVMtxt0.Location = new System.Drawing.Point(654, 160);
-            this.MaNVMtxt0.Margin = new System.Windows.Forms.Padding(2);
-            this.MaNVMtxt0.Name = "MaNVMtxt0";
-            this.MaNVMtxt0.Size = new System.Drawing.Size(200, 24);
-            this.MaNVMtxt0.TabIndex = 24;
             // 
             // MuonTratxt0
             // 
@@ -704,6 +642,7 @@ namespace Quan_Ly_Thu_Vien
             this.guna2GradientPanel6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.guna2GradientPanel6.BorderRadius = 15;
             this.guna2GradientPanel6.BorderThickness = 2;
+            this.guna2GradientPanel6.Controls.Add(this.MaNVMtxt0);
             this.guna2GradientPanel6.Controls.Add(this.cboMaDG0);
             this.guna2GradientPanel6.Controls.Add(this.cboMaSach0);
             this.guna2GradientPanel6.Controls.Add(this.textBox6);
@@ -716,7 +655,6 @@ namespace Quan_Ly_Thu_Vien
             this.guna2GradientPanel6.Controls.Add(this.guna2GradientPanel11);
             this.guna2GradientPanel6.Controls.Add(this.dtmNgayHetHan0);
             this.guna2GradientPanel6.Controls.Add(this.guna2GradientPanel7);
-            this.guna2GradientPanel6.Controls.Add(this.MaNVMtxt0);
             this.guna2GradientPanel6.Controls.Add(this.MuonTratxt0);
             this.guna2GradientPanel6.Font = new System.Drawing.Font("Times New Roman", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GradientPanel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(49)))), ((int)(((byte)(1)))));
@@ -726,6 +664,25 @@ namespace Quan_Ly_Thu_Vien
             this.guna2GradientPanel6.ShadowDecoration.Parent = this.guna2GradientPanel6;
             this.guna2GradientPanel6.Size = new System.Drawing.Size(880, 238);
             this.guna2GradientPanel6.TabIndex = 38;
+            // 
+            // MaNVMtxt0
+            // 
+            this.MaNVMtxt0.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.MaNVMtxt0.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MaNVMtxt0.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
+            this.MaNVMtxt0.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(136)))), ((int)(((byte)(77)))));
+            this.MaNVMtxt0.HintText = "";
+            this.MaNVMtxt0.isPassword = false;
+            this.MaNVMtxt0.LineFocusedColor = System.Drawing.Color.Transparent;
+            this.MaNVMtxt0.LineIdleColor = System.Drawing.Color.Transparent;
+            this.MaNVMtxt0.LineMouseHoverColor = System.Drawing.Color.Transparent;
+            this.MaNVMtxt0.LineThickness = 1;
+            this.MaNVMtxt0.Location = new System.Drawing.Point(654, 160);
+            this.MaNVMtxt0.Margin = new System.Windows.Forms.Padding(4);
+            this.MaNVMtxt0.Name = "MaNVMtxt0";
+            this.MaNVMtxt0.Size = new System.Drawing.Size(195, 27);
+            this.MaNVMtxt0.TabIndex = 47;
+            this.MaNVMtxt0.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // bunifuCustomLabel5
             // 
@@ -871,6 +828,24 @@ namespace Quan_Ly_Thu_Vien
             this.btnNhap.Text = "Mượn mới";
             this.btnNhap.Click += new System.EventHandler(this.btnNhap_Click);
             // 
+            // dtmNgayMuon0
+            // 
+            this.dtmNgayMuon0.CheckedState.Parent = this.dtmNgayMuon0;
+            this.dtmNgayMuon0.FillColor = System.Drawing.Color.Empty;
+            this.dtmNgayMuon0.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtmNgayMuon0.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
+            this.dtmNgayMuon0.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtmNgayMuon0.HoverState.Parent = this.dtmNgayMuon0;
+            this.dtmNgayMuon0.Location = new System.Drawing.Point(654, 40);
+            this.dtmNgayMuon0.Margin = new System.Windows.Forms.Padding(2);
+            this.dtmNgayMuon0.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtmNgayMuon0.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtmNgayMuon0.Name = "dtmNgayMuon0";
+            this.dtmNgayMuon0.ShadowDecoration.Parent = this.dtmNgayMuon0;
+            this.dtmNgayMuon0.Size = new System.Drawing.Size(200, 16);
+            this.dtmNgayMuon0.TabIndex = 28;
+            this.dtmNgayMuon0.Value = new System.DateTime(2021, 4, 29, 1, 35, 3, 737);
+            // 
             // MuonSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -935,23 +910,22 @@ namespace Quan_Ly_Thu_Vien
         private System.Windows.Forms.TextBox textBox1;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel3;
         private System.Windows.Forms.TextBox txtNDTimKiem;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dtmNgayMuon0;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel11;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtmNgayHetHan0;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel7;
         private Bunifu.Framework.UI.BunifuCustomLabel searchbarlabel;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
-        private System.Windows.Forms.ComboBox MaNVMtxt0;
         private Bunifu.Framework.UI.BunifuMaterialTextbox MuonTratxt0;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel6;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
         private Guna.UI2.WinForms.Guna2DataGridView dtgrdView_Muon;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
-        private Guna.UI2.WinForms.Guna2GradientButton timkiembutton;
         private Guna.UI2.WinForms.Guna2GradientButton btnHuy0;
         private Guna.UI2.WinForms.Guna2GradientButton btnGiaHan;
         private Guna.UI2.WinForms.Guna2GradientButton btnChoMuon0;
         private Guna.UI2.WinForms.Guna2GradientButton btnNhap;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox MaNVMtxt0;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtmNgayMuon0;
     }
 }

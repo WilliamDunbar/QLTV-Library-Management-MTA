@@ -17,14 +17,12 @@ namespace Quan_Ly_Thu_Vien
         private IconButton currentButton;
         private Panel leftBorderButton;
         private Form currentChildForm;
+        private int ImageNumber = 1;
 
         public Trangchu()
         {
             InitializeComponent();
-            //if(DangNhap.ThuThuOrDocGia == false)
-            //{
-            //    iconBtMuonSach.Visible = false;
-            //}
+            
         }
 
         private void exitbutton_Click(object sender, EventArgs e)
@@ -53,20 +51,20 @@ namespace Quan_Ly_Thu_Vien
         private void iconBt_DocGia_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
-            if (DangNhap.ThuThuOrDocGia == true)
+            if (Login.ThuThuOrDocGia == true)
             {
                 OpenChildForm(new QuanLyDocGia_NV());
             }
             else
             {
-                
+                OpenChildForm(new ThongTinMuonSach_DocGia());
             }
         }
 
         private void iconBt_Sach_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
-            if(DangNhap.ThuThuOrDocGia == true)
+            if(Login.ThuThuOrDocGia == true)
             {
                 OpenChildForm(new QuanLyDauSach_NV());
             }
@@ -132,7 +130,7 @@ namespace Quan_Ly_Thu_Vien
         private void Reset()
         {
             DisableButton();
-            leftBorderButton.Visible = false;
+
         }
         private void MTA_Click(object sender, EventArgs e)
         {
@@ -178,7 +176,7 @@ namespace Quan_Ly_Thu_Vien
                 {
                     if (this.WindowState == FormWindowState.Normal) tk.Location = new Point(1550, 145);
                     else tk.Location = new Point(1600, 125);
-                    if(DangNhap.ThuThuOrDocGia == false)
+                    if(Login.ThuThuOrDocGia == false)
                     {
                         tk.BtDangKyTK.Visible = false;
                     }
@@ -200,14 +198,14 @@ namespace Quan_Ly_Thu_Vien
         {
             using (Model_QuanLi_ThuVien qltv = new Model_QuanLi_ThuVien())
             {
-                if(DangNhap.ThuThuOrDocGia == true)
+                if(Login.ThuThuOrDocGia == true)
                 {
-                    NhanVien NV = qltv.NhanViens.Where(p => p.MaNhanVien == DangNhap.MaNguoiDung).FirstOrDefault();
+                    NhanVien NV = qltv.NhanViens.Where(p => p.MaNhanVien == Login.MaNguoiDung).FirstOrDefault();
                     accountChip.Text = NV.HoTen;
                 }
                 else
                 {
-                    DocGia DG = qltv.DocGias.Where(p => p.MaDocGia == DangNhap.MaNguoiDung).FirstOrDefault();
+                    DocGia DG = qltv.DocGias.Where(p => p.MaDocGia == Login.MaNguoiDung).FirstOrDefault();
                     accountChip.Text = DG.TenDocGia;
                 }
 
@@ -215,5 +213,20 @@ namespace Quan_Ly_Thu_Vien
             }
         }
         //************
+
+        private void Slider()
+        {
+            if(ImageNumber == 4)
+            {
+                ImageNumber = 1;
+            }
+            SliderPicture.ImageLocation = string.Format(@"D:\Quan_ly_thu_vien\QLTV-Library-Management-MTA\Quan_Ly_Thu_Vien\Picture\{0}.jpg", ImageNumber);
+            ImageNumber++;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Slider();
+        }
     }
 }

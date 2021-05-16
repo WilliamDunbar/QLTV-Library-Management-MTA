@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,6 +53,7 @@ namespace Quan_Ly_Thu_Vien
             txbLoaiDG.Enabled = false;
             txbTaiKhoanDG.Enabled = false;
             txbMatKhauDG.Enabled = false;
+            ptbAnhDS.Enabled = false;
         }
 
         void TrangThaiThemOrSuaDG()
@@ -69,6 +71,7 @@ namespace Quan_Ly_Thu_Vien
             dtpNgayHH.Enabled = true;
             txbLoaiDG.Enabled = true;
             txbMatKhauDG.Enabled = true;
+            ptbAnhDS.Enabled = true;
         }
 
 
@@ -91,9 +94,51 @@ namespace Quan_Ly_Thu_Vien
                 txbMatKhauDG.Text = TK.MatKhau;
                 if (dtgv_loadDG.Rows[i].Cells[7].Value == null) txbLoaiDG.Text = "NULL";
                 else txbLoaiDG.Text = dtgv_loadDG.Rows[i].Cells[7].Value.ToString();
+
+                DocGia dg = qltv.DocGias.Where(p => p.MaDocGia == txbMaDG.Text).FirstOrDefault();
+                Byte_HinhAnh = (byte[])dg.HinhAnh;
+                ptbAnhDS.Image = ByteToImage((byte[])dg.HinhAnh);
             }
         }
+        // sửa
+        private byte[] ConvertImageToBytes(string text)
+        {
+            FileStream fs;
+            fs = new FileStream(text, FileMode.Open, FileAccess.Read);
+            byte[] picbyte = new byte[fs.Length];
+            fs.Read(picbyte, 0, System.Convert.ToInt32(fs.Length));
+            fs.Close();
+            return picbyte;
 
+        }
+        string textImagePath;
+        byte[] Byte_HinhAnh;
+        private void ptbAnhDS_DoubleClick(object sender, EventArgs e)
+        {
+            OpenFileDialog OpenFDL = new OpenFileDialog();
+            OpenFDL.Filter = OpenFDL.Filter = "JPG files (.jpg)|.jpg|All files (.)|*.*";
+            OpenFDL.FilterIndex = 1;
+            OpenFDL.RestoreDirectory = true;
+            if (OpenFDL.ShowDialog() == DialogResult.OK)
+            {
+                ptbAnhDS.ImageLocation = OpenFDL.FileName;
+                textImagePath = OpenFDL.FileName.ToString();
+            }
+            Byte_HinhAnh = ConvertImageToBytes(textImagePath);
+            ptbAnhDS.Image = ByteToImage(Byte_HinhAnh);
+        }
+        public static Image ByteToImage(byte[] arrImage)
+        {
+            if (arrImage == null)
+            {
+                MessageBox.Show("KO co anh");
+                return null;
+            }
+            MemoryStream ms = new MemoryStream(arrImage, 0, arrImage.Length);
+            ms.Write(arrImage, 0, arrImage.Length);
+            Image image = Image.FromStream(ms, true);
+            return image;
+        }
         private void btLuuDG_Click(object sender, EventArgs e)
         {
             using (Model_QuanLi_ThuVien qltv = new Model_QuanLi_ThuVien())
@@ -110,6 +155,18 @@ namespace Quan_Ly_Thu_Vien
                 else if (txbMatKhauDG.Text == "") MessageBox.Show("Ban chua nhap mat khau!");
                 else
                 {
+                    // Sửa
+                    SqlParameter[] Param = {
+                                    new SqlParameter{ParameterName="MaDocGia",Value=txbMaDG.Text},
+                                    new SqlParameter{ParameterName="TenDocGia",Value=txbTenDG.Text},
+                                    new SqlParameter{ParameterName="NgaySinh",Value=dtpNgaySinhDG.Text},
+                                    new SqlParameter{ParameterName="DonVi",Value=txbDonViDG.Text},
+                                    new SqlParameter{ParameterName="SDT",Value=txbSdtDG.Text},
+                                    new SqlParameter{ParameterName="NgayDK",Value=dtpNgayDK.Text},
+                                    new SqlParameter{ParameterName = "NgayHetHanDK", Value = dtpNgayHH.Text },
+                                    new SqlParameter{ParameterName = "LoaiDocGia", Value = txbLoaiDG.Text },
+                                    new SqlParameter{ParameterName = "HinhAnh", Value = Byte_HinhAnh }
+                                };
                     if (ThemOrSua == true)
                     {
                         bool madg = false;
@@ -124,7 +181,7 @@ namespace Quan_Ly_Thu_Vien
                         {
                             try
                             {
-                                qltv.Database.ExecuteSqlCommand($"exec ThemDocGia '{txbMaDG.Text}',N'{txbTenDG.Text}','{dtpNgaySinhDG.Text}',N'{txbDonViDG.Text}','{txbSdtDG.Text}','{dtpNgayDK.Text}','{dtpNgayHH.Text}',N'{txbLoaiDG.Text}'");
+                                qltv.Database.ExecuteSqlCommand($"exec ThemDocGia @MaDocGia,@TenDocGia,@NgaySinh,@DonVi,@SDT,@NgayDK,@NgayHetHanDK,@LoaiDocGia,@HinhAnh", Param);
                                 qltv.Database.ExecuteSqlCommand($"exec ThemTaiKhoanDG '{txbMaDG.Text}','{txbTaiKhoanDG.Text}','{txbMatKhauDG.Text}'");
                                 MessageBox.Show("Them thanh cong doc gia");
                                 Load_DG();
@@ -136,7 +193,7 @@ namespace Quan_Ly_Thu_Vien
                     else
                     {
                         qltv.Database.ExecuteSqlCommand($"exec SuaTaiKhoanDG '{txbMaDG.Text}','{txbMatKhauDG.Text}'");
-                        qltv.Database.ExecuteSqlCommand($"exec SuaDocGia '{txbMaDG.Text}',N'{txbTenDG.Text}','{dtpNgaySinhDG.Text}',N'{txbDonViDG.Text}','{txbSdtDG.Text}','{dtpNgayDK.Text}','{dtpNgayHH.Text}',N'{txbLoaiDG.Text}'");
+                        qltv.Database.ExecuteSqlCommand($"exec SuaDocGia @MaDocGia,@TenDocGia,@NgaySinh,@DonVi,@SDT,@NgayDK,@NgayHetHanDK,@LoaiDocGia,@HinhAnh",Param );
                         MessageBox.Show("Sua thanh cong");
                         Load_DG();
                         TrangThaiBanDau();
@@ -155,6 +212,7 @@ namespace Quan_Ly_Thu_Vien
         {
             ThemOrSua = true;
             TrangThaiThemOrSuaDG();
+            ptbAnhDS.Image = null;
             txbMaDG.Enabled = true;
             txbTaiKhoanDG.Enabled = true;
             txbMaDG.Text = "";
@@ -194,5 +252,7 @@ namespace Quan_Ly_Thu_Vien
                 }
             }
         }
+
+
     }
 }

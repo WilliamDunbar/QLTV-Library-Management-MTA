@@ -22,15 +22,12 @@ namespace Quan_Ly_Thu_Vien
             Load_NV();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
         void Load_NV()
         {
             using (Model_QuanLi_ThuVien qltv = new Model_QuanLi_ThuVien())
             {
-                NhanVien NV = qltv.NhanViens.Where(p => p.MaNhanVien == DangNhap.MaNguoiDung).FirstOrDefault();
+                NhanVien NV = qltv.NhanViens.Where(p => p.MaNhanVien == Login.MaNguoiDung).FirstOrDefault();
                 ChucVu CV = qltv.ChucVus.Where(p => p.MaChucVu == NV.MaChucVu).FirstOrDefault();
                 txbMaNV.Text = NV.MaNhanVien;
                 txbTenNV.Text = NV.HoTen;

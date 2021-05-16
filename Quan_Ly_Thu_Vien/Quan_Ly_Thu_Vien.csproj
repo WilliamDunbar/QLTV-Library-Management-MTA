@@ -48,6 +48,33 @@
     <Reference Include="Guna.UI2">
       <HintPath>..\..\..\NNLT2\QLTVWF\packages\_Getintopc.com_Guna_UI_Framework_Ultimate_v2.0.0.1\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna.UI-Framework-Lib-master\Guna.UI2 WinForms\.net 4.0\Guna.UI2.dll</HintPath>
     </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.WinForms.0.9.7.1\lib\net45\LiveCharts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -68,6 +95,7 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DangKyNhanVien.cs">
@@ -75,12 +103,6 @@
     </Compile>
     <Compile Include="DangKyNhanVien.Designer.cs">
       <DependentUpon>DangKyNhanVien.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DangNhap.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DangNhap.Designer.cs">
-      <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="Database\ChucVu.cs" />
     <Compile Include="Database\CuonSach.cs" />
@@ -107,6 +129,7 @@
     <Compile Include="Database\ThongTinNhanVien.cs" />
     <Compile Include="Database\ThongTinNopPhat.cs" />
     <Compile Include="Database\TT_CuonSach.cs" />
+    <Compile Include="Database\TT_MuonSach_DocGia.cs" />
     <Compile Include="Database\TT_TacGia_DauSach.cs" />
     <Compile Include="Database\TT_TheLoai_DauSach.cs" />
     <Compile Include="Database\ViPham.cs" />
@@ -132,11 +155,30 @@
     <Compile Include="Form_ThemTheLoai.Designer.cs">
       <DependentUpon>Form_ThemTheLoai.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportViPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportViPham.Designer.cs">
+      <DependentUpon>ReportViPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="ThayDoiThongTinDocGia.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ThayDoiThongTinDocGia.Designer.cs">
       <DependentUpon>ThayDoiThongTinDocGia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThongTinMuonSach_DocGia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongTinMuonSach_DocGia.Designer.cs">
+      <DependentUpon>ThongTinMuonSach_DocGia.cs</DependentUpon>
     </Compile>
     <Compile Include="Trangchu.cs">
       <SubType>Form</SubType>
@@ -169,12 +211,6 @@
     </Compile>
     <Compile Include="QuanLyDauSach_NV.Designer.cs">
       <DependentUpon>QuanLyDauSach_NV.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLyDocGia_DG.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuanLyDocGia_DG.Designer.cs">
-      <DependentUpon>QuanLyDocGia_DG.cs</DependentUpon>
     </Compile>
     <Compile Include="QuanLyDocGia_NV.cs">
       <SubType>Form</SubType>
@@ -209,8 +245,8 @@
     <EmbeddedResource Include="DangKyNhanVien.resx">
       <DependentUpon>DangKyNhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DangNhap.resx">
-      <DependentUpon>DangNhap.cs</DependentUpon>
+    <EmbeddedResource Include="DoiMatKhau.resx">
+      <DependentUpon>DoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_ThemTacGia.resx">
       <DependentUpon>Form_ThemTacGia.cs</DependentUpon>
@@ -218,8 +254,17 @@
     <EmbeddedResource Include="Form_ThemTheLoai.resx">
       <DependentUpon>Form_ThemTheLoai.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportViPham.resx">
+      <DependentUpon>ReportViPham.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ThayDoiThongTinDocGia.resx">
       <DependentUpon>ThayDoiThongTinDocGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongTinMuonSach_DocGia.resx">
+      <DependentUpon>ThongTinMuonSach_DocGia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Trangchu.resx">
       <DependentUpon>Trangchu.cs</DependentUpon>
@@ -260,6 +305,8 @@
     <EmbeddedResource Include="TraSach.resx">
       <DependentUpon>TraSach.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="XuLyViPham.rdlc" />
+    <None Include="bin\Debug\Quan_Ly_Thu_Vien.exe.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -273,6 +320,106 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\Bunifu_UI_v1.52.dll" />
+    <Content Include="bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="bin\Debug\EntityFramework.dll" />
+    <Content Include="bin\Debug\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\Debug\EntityFramework.SqlServer.xml" />
+    <Content Include="bin\Debug\EntityFramework.xml" />
+    <Content Include="bin\Debug\EnvDTE.dll" />
+    <Content Include="bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="bin\Debug\FontAwesome.Sharp.dll" />
+    <Content Include="bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="bin\Debug\Guna.UI2.dll" />
+    <Content Include="bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="bin\Debug\LiveCharts.dll" />
+    <Content Include="bin\Debug\LiveCharts.pdb" />
+    <Content Include="bin\Debug\LiveCharts.WinForms.dll" />
+    <Content Include="bin\Debug\LiveCharts.WinForms.pdb" />
+    <Content Include="bin\Debug\LiveCharts.WinForms.xml" />
+    <Content Include="bin\Debug\LiveCharts.Wpf.dll" />
+    <Content Include="bin\Debug\LiveCharts.Wpf.pdb" />
+    <Content Include="bin\Debug\LiveCharts.Wpf.xml" />
+    <Content Include="bin\Debug\LiveCharts.xml" />
+    <Content Include="bin\Debug\Microsoft.MSXML.dll" />
+    <Content Include="bin\Debug\Microsoft.ReportViewer.Common.dll" />
+    <Content Include="bin\Debug\Microsoft.ReportViewer.DataVisualization.dll" />
+    <Content Include="bin\Debug\Microsoft.ReportViewer.Design.dll" />
+    <Content Include="bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll" />
+    <Content Include="bin\Debug\Microsoft.ReportViewer.WinForms.dll" />
+    <Content Include="bin\Debug\Microsoft.SqlServer.Types.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll" />
+    <Content Include="bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="bin\Debug\Quan_Ly_Thu_Vien.exe" />
+    <Content Include="bin\Debug\Quan_Ly_Thu_Vien.pdb" />
+    <Content Include="bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="bin\Debug\SqlServerTypes\x64\msvcr120.dll" />
+    <Content Include="bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll" />
+    <Content Include="bin\Debug\SqlServerTypes\x86\msvcr120.dll" />
+    <Content Include="bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll" />
+    <Content Include="bin\Debug\stdole.dll" />
+    <Content Include="bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="Picture\1.jpg" />
+    <Content Include="Picture\2.jpg" />
+    <Content Include="Picture\3.jpg" />
+    <Content Include="Picture\DangNhap.gif" />
+    <Content Include="Picture\Login.gif" />
+    <Content Include="Picture\tải xuống.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

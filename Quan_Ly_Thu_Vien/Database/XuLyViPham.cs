@@ -13,6 +13,7 @@ namespace Quan_Ly_Thu_Vien.Database
         [StringLength(10)]
         public string MaXuLy { get; set; }
 
+        [Required]
         [StringLength(10)]
         public string MaDocGia { get; set; }
 

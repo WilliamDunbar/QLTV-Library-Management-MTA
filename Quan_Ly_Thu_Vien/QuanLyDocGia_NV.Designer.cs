@@ -30,10 +30,10 @@ namespace Quan_Ly_Thu_Vien
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.rdbMaDG = new System.Windows.Forms.RadioButton();
             this.dtpNgayDK = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.dtpNgaySinhDG = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -68,17 +68,27 @@ namespace Quan_Ly_Thu_Vien
             this.guna2GradientPanel8 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2GradientPanel9 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2GradientPanel5 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.ptbAnhDS = new FontAwesome.Sharp.IconPictureBox();
             this.btHuyDG = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btLuuDG = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btXoaDG = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btSuaDG = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btThemDG = new Guna.UI2.WinForms.Guna2GradientButton();
             this.dtgv_loadDG = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.MaDocGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenDocGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonVi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayDK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayHetHanDK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LoaiDocGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2GradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.guna2GradientPanel3.SuspendLayout();
             this.guna2GradientPanel1.SuspendLayout();
             this.guna2GradientPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbAnhDS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_loadDG)).BeginInit();
             this.SuspendLayout();
             // 
@@ -125,7 +135,7 @@ namespace Quan_Ly_Thu_Vien
             this.dtpNgaySinhDG.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(139)))), ((int)(((byte)(61)))));
             this.dtpNgaySinhDG.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgaySinhDG.HoverState.Parent = this.dtpNgaySinhDG;
-            this.dtpNgaySinhDG.Location = new System.Drawing.Point(266, 195);
+            this.dtpNgaySinhDG.Location = new System.Drawing.Point(344, 195);
             this.dtpNgaySinhDG.Margin = new System.Windows.Forms.Padding(2);
             this.dtpNgaySinhDG.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpNgaySinhDG.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
@@ -148,7 +158,7 @@ namespace Quan_Ly_Thu_Vien
             this.txbDonViDG.LineIdleColor = System.Drawing.Color.Transparent;
             this.txbDonViDG.LineMouseHoverColor = System.Drawing.Color.Transparent;
             this.txbDonViDG.LineThickness = 1;
-            this.txbDonViDG.Location = new System.Drawing.Point(264, 139);
+            this.txbDonViDG.Location = new System.Drawing.Point(342, 139);
             this.txbDonViDG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbDonViDG.Name = "txbDonViDG";
             this.txbDonViDG.Size = new System.Drawing.Size(200, 27);
@@ -168,7 +178,7 @@ namespace Quan_Ly_Thu_Vien
             this.txbSdtDG.LineIdleColor = System.Drawing.Color.Transparent;
             this.txbSdtDG.LineMouseHoverColor = System.Drawing.Color.Transparent;
             this.txbSdtDG.LineThickness = 1;
-            this.txbSdtDG.Location = new System.Drawing.Point(266, 231);
+            this.txbSdtDG.Location = new System.Drawing.Point(344, 231);
             this.txbSdtDG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbSdtDG.Name = "txbSdtDG";
             this.txbSdtDG.Size = new System.Drawing.Size(200, 27);
@@ -180,7 +190,7 @@ namespace Quan_Ly_Thu_Vien
             this.bunifuCustomLabel1.AutoSize = true;
             this.bunifuCustomLabel1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(87, 234);
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(127, 234);
             this.bunifuCustomLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
             this.bunifuCustomLabel1.Size = new System.Drawing.Size(159, 26);
@@ -234,7 +244,7 @@ namespace Quan_Ly_Thu_Vien
             this.bunifuCustomLabel11.AutoSize = true;
             this.bunifuCustomLabel11.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
-            this.bunifuCustomLabel11.Location = new System.Drawing.Point(1097, 233);
+            this.bunifuCustomLabel11.Location = new System.Drawing.Point(1074, 233);
             this.bunifuCustomLabel11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bunifuCustomLabel11.Name = "bunifuCustomLabel11";
             this.bunifuCustomLabel11.Size = new System.Drawing.Size(126, 26);
@@ -247,7 +257,7 @@ namespace Quan_Ly_Thu_Vien
             this.bunifuCustomLabel10.AutoSize = true;
             this.bunifuCustomLabel10.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
-            this.bunifuCustomLabel10.Location = new System.Drawing.Point(1097, 187);
+            this.bunifuCustomLabel10.Location = new System.Drawing.Point(1074, 187);
             this.bunifuCustomLabel10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bunifuCustomLabel10.Name = "bunifuCustomLabel10";
             this.bunifuCustomLabel10.Size = new System.Drawing.Size(129, 26);
@@ -260,7 +270,7 @@ namespace Quan_Ly_Thu_Vien
             this.bunifuCustomLabel9.AutoSize = true;
             this.bunifuCustomLabel9.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
-            this.bunifuCustomLabel9.Location = new System.Drawing.Point(1097, 142);
+            this.bunifuCustomLabel9.Location = new System.Drawing.Point(1074, 142);
             this.bunifuCustomLabel9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bunifuCustomLabel9.Name = "bunifuCustomLabel9";
             this.bunifuCustomLabel9.Size = new System.Drawing.Size(152, 26);
@@ -273,7 +283,7 @@ namespace Quan_Ly_Thu_Vien
             this.bunifuCustomLabel7.AutoSize = true;
             this.bunifuCustomLabel7.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
-            this.bunifuCustomLabel7.Location = new System.Drawing.Point(1097, 48);
+            this.bunifuCustomLabel7.Location = new System.Drawing.Point(1074, 48);
             this.bunifuCustomLabel7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bunifuCustomLabel7.Name = "bunifuCustomLabel7";
             this.bunifuCustomLabel7.Size = new System.Drawing.Size(161, 26);
@@ -284,12 +294,12 @@ namespace Quan_Ly_Thu_Vien
             // iconPictureBox1
             // 
             this.iconPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.iconPictureBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.iconPictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.iconPictureBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(60)))));
             this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Search;
             this.iconPictureBox1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(60)))));
             this.iconPictureBox1.IconSize = 25;
-            this.iconPictureBox1.Location = new System.Drawing.Point(17, 3);
+            this.iconPictureBox1.Location = new System.Drawing.Point(17, 6);
             this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.iconPictureBox1.Name = "iconPictureBox1";
             this.iconPictureBox1.Size = new System.Drawing.Size(25, 25);
@@ -302,7 +312,7 @@ namespace Quan_Ly_Thu_Vien
             this.bunifuCustomLabel8.AutoSize = true;
             this.bunifuCustomLabel8.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
-            this.bunifuCustomLabel8.Location = new System.Drawing.Point(1097, 97);
+            this.bunifuCustomLabel8.Location = new System.Drawing.Point(1074, 97);
             this.bunifuCustomLabel8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
             this.bunifuCustomLabel8.Size = new System.Drawing.Size(161, 26);
@@ -343,7 +353,7 @@ namespace Quan_Ly_Thu_Vien
             this.bunifuCustomLabel6.AutoSize = true;
             this.bunifuCustomLabel6.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
-            this.bunifuCustomLabel6.Location = new System.Drawing.Point(87, 189);
+            this.bunifuCustomLabel6.Location = new System.Drawing.Point(127, 189);
             this.bunifuCustomLabel6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
             this.bunifuCustomLabel6.Size = new System.Drawing.Size(127, 26);
@@ -356,7 +366,7 @@ namespace Quan_Ly_Thu_Vien
             this.bunifuCustomLabel5.AutoSize = true;
             this.bunifuCustomLabel5.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(87, 144);
+            this.bunifuCustomLabel5.Location = new System.Drawing.Point(127, 144);
             this.bunifuCustomLabel5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
             this.bunifuCustomLabel5.Size = new System.Drawing.Size(93, 26);
@@ -369,7 +379,7 @@ namespace Quan_Ly_Thu_Vien
             this.bunifuCustomLabel4.AutoSize = true;
             this.bunifuCustomLabel4.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(87, 99);
+            this.bunifuCustomLabel4.Location = new System.Drawing.Point(127, 99);
             this.bunifuCustomLabel4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
             this.bunifuCustomLabel4.Size = new System.Drawing.Size(144, 26);
@@ -382,7 +392,7 @@ namespace Quan_Ly_Thu_Vien
             this.bunifuCustomLabel3.AutoSize = true;
             this.bunifuCustomLabel3.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(87, 50);
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(127, 50);
             this.bunifuCustomLabel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
             this.bunifuCustomLabel3.Size = new System.Drawing.Size(140, 26);
@@ -444,7 +454,7 @@ namespace Quan_Ly_Thu_Vien
             this.txbTenDG.LineIdleColor = System.Drawing.Color.Transparent;
             this.txbTenDG.LineMouseHoverColor = System.Drawing.Color.Transparent;
             this.txbTenDG.LineThickness = 1;
-            this.txbTenDG.Location = new System.Drawing.Point(266, 93);
+            this.txbTenDG.Location = new System.Drawing.Point(344, 93);
             this.txbTenDG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbTenDG.Name = "txbTenDG";
             this.txbTenDG.Size = new System.Drawing.Size(200, 27);
@@ -512,7 +522,7 @@ namespace Quan_Ly_Thu_Vien
             this.guna2GradientPanel13.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(235)))), ((int)(((byte)(0)))));
             this.guna2GradientPanel13.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GradientPanel13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(139)))), ((int)(((byte)(61)))));
-            this.guna2GradientPanel13.Location = new System.Drawing.Point(264, 154);
+            this.guna2GradientPanel13.Location = new System.Drawing.Point(342, 154);
             this.guna2GradientPanel13.Margin = new System.Windows.Forms.Padding(2);
             this.guna2GradientPanel13.Name = "guna2GradientPanel13";
             this.guna2GradientPanel13.ShadowDecoration.Parent = this.guna2GradientPanel13;
@@ -551,7 +561,7 @@ namespace Quan_Ly_Thu_Vien
             this.txbMaDG.LineIdleColor = System.Drawing.Color.Transparent;
             this.txbMaDG.LineMouseHoverColor = System.Drawing.Color.Transparent;
             this.txbMaDG.LineThickness = 1;
-            this.txbMaDG.Location = new System.Drawing.Point(266, 45);
+            this.txbMaDG.Location = new System.Drawing.Point(344, 45);
             this.txbMaDG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbMaDG.Name = "txbMaDG";
             this.txbMaDG.Size = new System.Drawing.Size(200, 27);
@@ -566,7 +576,7 @@ namespace Quan_Ly_Thu_Vien
             this.guna2GradientPanel8.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(235)))), ((int)(((byte)(0)))));
             this.guna2GradientPanel8.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GradientPanel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(139)))), ((int)(((byte)(61)))));
-            this.guna2GradientPanel8.Location = new System.Drawing.Point(266, 105);
+            this.guna2GradientPanel8.Location = new System.Drawing.Point(344, 105);
             this.guna2GradientPanel8.Margin = new System.Windows.Forms.Padding(2);
             this.guna2GradientPanel8.Name = "guna2GradientPanel8";
             this.guna2GradientPanel8.ShadowDecoration.Parent = this.guna2GradientPanel8;
@@ -581,7 +591,7 @@ namespace Quan_Ly_Thu_Vien
             this.guna2GradientPanel9.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(235)))), ((int)(((byte)(0)))));
             this.guna2GradientPanel9.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GradientPanel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(139)))), ((int)(((byte)(61)))));
-            this.guna2GradientPanel9.Location = new System.Drawing.Point(266, 70);
+            this.guna2GradientPanel9.Location = new System.Drawing.Point(344, 70);
             this.guna2GradientPanel9.Margin = new System.Windows.Forms.Padding(2);
             this.guna2GradientPanel9.Name = "guna2GradientPanel9";
             this.guna2GradientPanel9.ShadowDecoration.Parent = this.guna2GradientPanel9;
@@ -597,11 +607,7 @@ namespace Quan_Ly_Thu_Vien
             this.guna2GradientPanel5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(97)))), ((int)(((byte)(234)))));
             this.guna2GradientPanel5.BorderRadius = 15;
             this.guna2GradientPanel5.BorderThickness = 2;
-            this.guna2GradientPanel5.Controls.Add(this.btHuyDG);
-            this.guna2GradientPanel5.Controls.Add(this.btLuuDG);
-            this.guna2GradientPanel5.Controls.Add(this.btXoaDG);
-            this.guna2GradientPanel5.Controls.Add(this.btSuaDG);
-            this.guna2GradientPanel5.Controls.Add(this.btThemDG);
+            this.guna2GradientPanel5.Controls.Add(this.ptbAnhDS);
             this.guna2GradientPanel5.Controls.Add(this.dtpNgayDK);
             this.guna2GradientPanel5.Controls.Add(this.dtpNgaySinhDG);
             this.guna2GradientPanel5.Controls.Add(this.txbDonViDG);
@@ -634,8 +640,28 @@ namespace Quan_Ly_Thu_Vien
             this.guna2GradientPanel5.Size = new System.Drawing.Size(1623, 306);
             this.guna2GradientPanel5.TabIndex = 31;
             // 
+            // ptbAnhDS
+            // 
+            this.ptbAnhDS.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.ptbAnhDS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(216)))));
+            this.ptbAnhDS.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.ptbAnhDS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(216)))));
+            this.ptbAnhDS.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.ptbAnhDS.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(216)))));
+            this.ptbAnhDS.IconSize = 157;
+            this.ptbAnhDS.Location = new System.Drawing.Point(731, 55);
+            this.ptbAnhDS.Margin = new System.Windows.Forms.Padding(2);
+            this.ptbAnhDS.Name = "ptbAnhDS";
+            this.ptbAnhDS.Size = new System.Drawing.Size(157, 203);
+            this.ptbAnhDS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbAnhDS.TabIndex = 33;
+            this.ptbAnhDS.TabStop = false;
+            this.ptbAnhDS.DoubleClick += new System.EventHandler(this.ptbAnhDS_DoubleClick);
+            // 
             // btHuyDG
             // 
+            this.btHuyDG.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btHuyDG.BackColor = System.Drawing.Color.Transparent;
             this.btHuyDG.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(165)))), ((int)(((byte)(71)))));
             this.btHuyDG.BorderRadius = 13;
@@ -651,7 +677,7 @@ namespace Quan_Ly_Thu_Vien
             this.btHuyDG.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(152)))), ((int)(((byte)(0)))));
             this.btHuyDG.HoverState.ForeColor = System.Drawing.Color.White;
             this.btHuyDG.HoverState.Parent = this.btHuyDG;
-            this.btHuyDG.Location = new System.Drawing.Point(688, 217);
+            this.btHuyDG.Location = new System.Drawing.Point(1352, 200);
             this.btHuyDG.Name = "btHuyDG";
             this.btHuyDG.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(238)))), ((int)(((byte)(228)))));
             this.btHuyDG.ShadowDecoration.BorderRadius = 12;
@@ -665,6 +691,7 @@ namespace Quan_Ly_Thu_Vien
             // 
             // btLuuDG
             // 
+            this.btLuuDG.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btLuuDG.BackColor = System.Drawing.Color.Transparent;
             this.btLuuDG.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(165)))), ((int)(((byte)(71)))));
             this.btLuuDG.BorderRadius = 13;
@@ -680,7 +707,7 @@ namespace Quan_Ly_Thu_Vien
             this.btLuuDG.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(97)))), ((int)(((byte)(234)))));
             this.btLuuDG.HoverState.ForeColor = System.Drawing.Color.White;
             this.btLuuDG.HoverState.Parent = this.btLuuDG;
-            this.btLuuDG.Location = new System.Drawing.Point(688, 159);
+            this.btLuuDG.Location = new System.Drawing.Point(972, 204);
             this.btLuuDG.Name = "btLuuDG";
             this.btLuuDG.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(238)))), ((int)(((byte)(228)))));
             this.btLuuDG.ShadowDecoration.BorderRadius = 12;
@@ -694,6 +721,7 @@ namespace Quan_Ly_Thu_Vien
             // 
             // btXoaDG
             // 
+            this.btXoaDG.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btXoaDG.BackColor = System.Drawing.Color.Transparent;
             this.btXoaDG.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(165)))), ((int)(((byte)(71)))));
             this.btXoaDG.BorderRadius = 13;
@@ -709,7 +737,7 @@ namespace Quan_Ly_Thu_Vien
             this.btXoaDG.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(49)))), ((int)(((byte)(1)))));
             this.btXoaDG.HoverState.ForeColor = System.Drawing.Color.White;
             this.btXoaDG.HoverState.Parent = this.btXoaDG;
-            this.btXoaDG.Location = new System.Drawing.Point(834, 105);
+            this.btXoaDG.Location = new System.Drawing.Point(1473, 147);
             this.btXoaDG.Name = "btXoaDG";
             this.btXoaDG.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(238)))), ((int)(((byte)(228)))));
             this.btXoaDG.ShadowDecoration.BorderRadius = 12;
@@ -723,6 +751,7 @@ namespace Quan_Ly_Thu_Vien
             // 
             // btSuaDG
             // 
+            this.btSuaDG.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btSuaDG.BackColor = System.Drawing.Color.Transparent;
             this.btSuaDG.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(165)))), ((int)(((byte)(71)))));
             this.btSuaDG.BorderRadius = 13;
@@ -738,7 +767,7 @@ namespace Quan_Ly_Thu_Vien
             this.btSuaDG.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(152)))), ((int)(((byte)(0)))));
             this.btSuaDG.HoverState.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btSuaDG.HoverState.Parent = this.btSuaDG;
-            this.btSuaDG.Location = new System.Drawing.Point(628, 105);
+            this.btSuaDG.Location = new System.Drawing.Point(884, 148);
             this.btSuaDG.Name = "btSuaDG";
             this.btSuaDG.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(238)))), ((int)(((byte)(228)))));
             this.btSuaDG.ShadowDecoration.BorderRadius = 12;
@@ -752,6 +781,7 @@ namespace Quan_Ly_Thu_Vien
             // 
             // btThemDG
             // 
+            this.btThemDG.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btThemDG.BackColor = System.Drawing.Color.Transparent;
             this.btThemDG.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(165)))), ((int)(((byte)(71)))));
             this.btThemDG.BorderRadius = 13;
@@ -767,7 +797,7 @@ namespace Quan_Ly_Thu_Vien
             this.btThemDG.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(165)))), ((int)(((byte)(71)))));
             this.btThemDG.HoverState.ForeColor = System.Drawing.Color.White;
             this.btThemDG.HoverState.Parent = this.btThemDG;
-            this.btThemDG.Location = new System.Drawing.Point(729, 50);
+            this.btThemDG.Location = new System.Drawing.Point(1196, 147);
             this.btThemDG.Name = "btThemDG";
             this.btThemDG.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(238)))), ((int)(((byte)(228)))));
             this.btThemDG.ShadowDecoration.BorderRadius = 12;
@@ -785,46 +815,58 @@ namespace Quan_Ly_Thu_Vien
             this.dtgv_loadDG.AllowUserToDeleteRows = false;
             this.dtgv_loadDG.AllowUserToResizeColumns = false;
             this.dtgv_loadDG.AllowUserToResizeRows = false;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.White;
-            this.dtgv_loadDG.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dtgv_loadDG.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dtgv_loadDG.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgv_loadDG.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgv_loadDG.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(255)))), ((int)(((byte)(212)))));
             this.dtgv_loadDG.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgv_loadDG.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dtgv_loadDG.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(254)))), ((int)(((byte)(251)))));
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(168)))));
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgv_loadDG.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(254)))), ((int)(((byte)(251)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(168)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgv_loadDG.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dtgv_loadDG.ColumnHeadersHeight = 30;
             this.dtgv_loadDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dtgv_loadDG.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaDocGia,
+            this.TenDocGia,
+            this.NgaySinh,
+            this.DonVi,
+            this.SDT,
+            this.NgayDK,
+            this.NgayHetHanDK,
+            this.LoaiDocGia});
             this.dtgv_loadDG.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle27.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(216)))));
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgv_loadDG.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(216)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgv_loadDG.DefaultCellStyle = dataGridViewCellStyle3;
             this.dtgv_loadDG.EnableHeadersVisualStyles = false;
             this.dtgv_loadDG.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(242)))), ((int)(((byte)(117)))));
             this.dtgv_loadDG.Location = new System.Drawing.Point(49, 265);
             this.dtgv_loadDG.Margin = new System.Windows.Forms.Padding(2);
             this.dtgv_loadDG.Name = "dtgv_loadDG";
             this.dtgv_loadDG.ReadOnly = true;
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(168)))));
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(168)))));
-            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgv_loadDG.RowHeadersDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(168)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(168)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgv_loadDG.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dtgv_loadDG.RowHeadersVisible = false;
             this.dtgv_loadDG.RowHeadersWidth = 62;
             this.dtgv_loadDG.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -837,7 +879,7 @@ namespace Quan_Ly_Thu_Vien
             this.dtgv_loadDG.RowTemplate.ReadOnly = true;
             this.dtgv_loadDG.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgv_loadDG.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgv_loadDG.Size = new System.Drawing.Size(1648, 310);
+            this.dtgv_loadDG.Size = new System.Drawing.Size(1623, 310);
             this.dtgv_loadDG.TabIndex = 32;
             this.dtgv_loadDG.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dtgv_loadDG.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -863,6 +905,62 @@ namespace Quan_Ly_Thu_Vien
             this.dtgv_loadDG.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dtgv_loadDG.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_loadDG_CellClick);
             // 
+            // MaDocGia
+            // 
+            this.MaDocGia.DataPropertyName = "MaDocGia";
+            this.MaDocGia.HeaderText = "Mã độc giả";
+            this.MaDocGia.Name = "MaDocGia";
+            this.MaDocGia.ReadOnly = true;
+            // 
+            // TenDocGia
+            // 
+            this.TenDocGia.DataPropertyName = "TenDocGia";
+            this.TenDocGia.HeaderText = "Tên độc giả";
+            this.TenDocGia.Name = "TenDocGia";
+            this.TenDocGia.ReadOnly = true;
+            // 
+            // NgaySinh
+            // 
+            this.NgaySinh.DataPropertyName = "NgaySinh";
+            this.NgaySinh.HeaderText = "Ngày sinh";
+            this.NgaySinh.Name = "NgaySinh";
+            this.NgaySinh.ReadOnly = true;
+            // 
+            // DonVi
+            // 
+            this.DonVi.DataPropertyName = "DonVi";
+            this.DonVi.HeaderText = "Đơn vị";
+            this.DonVi.Name = "DonVi";
+            this.DonVi.ReadOnly = true;
+            // 
+            // SDT
+            // 
+            this.SDT.DataPropertyName = "SDT";
+            this.SDT.HeaderText = "Số điện thoại";
+            this.SDT.Name = "SDT";
+            this.SDT.ReadOnly = true;
+            // 
+            // NgayDK
+            // 
+            this.NgayDK.DataPropertyName = "NgayDK";
+            this.NgayDK.HeaderText = "Ngày đăng ký";
+            this.NgayDK.Name = "NgayDK";
+            this.NgayDK.ReadOnly = true;
+            // 
+            // NgayHetHanDK
+            // 
+            this.NgayHetHanDK.DataPropertyName = "NgayHetHanDK";
+            this.NgayHetHanDK.HeaderText = "Ngày hết hạn";
+            this.NgayHetHanDK.Name = "NgayHetHanDK";
+            this.NgayHetHanDK.ReadOnly = true;
+            // 
+            // LoaiDocGia
+            // 
+            this.LoaiDocGia.DataPropertyName = "LoaiDocGia";
+            this.LoaiDocGia.HeaderText = "Loại độc giả";
+            this.LoaiDocGia.Name = "LoaiDocGia";
+            this.LoaiDocGia.ReadOnly = true;
+            // 
             // QuanLyDocGia_NV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -870,8 +968,13 @@ namespace Quan_Ly_Thu_Vien
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
             this.ClientSize = new System.Drawing.Size(1708, 961);
             this.Controls.Add(this.guna2GradientPanel1);
+            this.Controls.Add(this.btHuyDG);
             this.Controls.Add(this.guna2GradientPanel5);
+            this.Controls.Add(this.btLuuDG);
             this.Controls.Add(this.dtgv_loadDG);
+            this.Controls.Add(this.btXoaDG);
+            this.Controls.Add(this.btThemDG);
+            this.Controls.Add(this.btSuaDG);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "QuanLyDocGia_NV";
             this.Opacity = 0.95D;
@@ -886,6 +989,7 @@ namespace Quan_Ly_Thu_Vien
             this.guna2GradientPanel1.PerformLayout();
             this.guna2GradientPanel5.ResumeLayout(false);
             this.guna2GradientPanel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbAnhDS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_loadDG)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -933,5 +1037,14 @@ namespace Quan_Ly_Thu_Vien
         private Guna.UI2.WinForms.Guna2GradientButton btLuuDG;
         private Guna.UI2.WinForms.Guna2GradientButton btXoaDG;
         private Guna.UI2.WinForms.Guna2GradientButton btSuaDG;
+        private FontAwesome.Sharp.IconPictureBox ptbAnhDS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaDocGia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenDocGia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DonVi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayDK;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayHetHanDK;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LoaiDocGia;
     }
 }

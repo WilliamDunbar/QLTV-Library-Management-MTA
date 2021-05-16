@@ -29,7 +29,7 @@ namespace Quan_Ly_Thu_Vien
                 formBackround.BackColor = Color.WhiteSmoke;
                 formBackround.WindowState = FormWindowState.Maximized;
                 formBackround.TopMost = true;
-                if(DangNhap.ThuThuOrDocGia == true)
+                if(Login.ThuThuOrDocGia == true)
                 {
                     using (ThayDoiThongTinNhanVIen ttnv = new ThayDoiThongTinNhanVIen())
                     {
