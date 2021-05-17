@@ -58,10 +58,11 @@ namespace Quan_Ly_Thu_Vien
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
             // 
             // guna2GradientPanel1
             // 
-            this.guna2GradientPanel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2GradientPanel1.BackColor = System.Drawing.Color.White;
             this.guna2GradientPanel1.Controls.Add(this.rdoBtThuThu);
             this.guna2GradientPanel1.Controls.Add(this.rdoBtDocGia);
             this.guna2GradientPanel1.Controls.Add(this.btDangNhap);
@@ -295,6 +296,7 @@ namespace Quan_Ly_Thu_Vien
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Login_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();
