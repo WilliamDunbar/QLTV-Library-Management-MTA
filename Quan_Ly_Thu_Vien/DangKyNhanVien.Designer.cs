@@ -98,13 +98,13 @@ namespace Quan_Ly_Thu_Vien
             // 
             this.cbbChucVu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
             this.cbbChucVu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbbChucVu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbChucVu.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbChucVu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(237)))), ((int)(((byte)(15)))));
             this.cbbChucVu.FormattingEnabled = true;
             this.cbbChucVu.Location = new System.Drawing.Point(201, 198);
             this.cbbChucVu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbbChucVu.Name = "cbbChucVu";
-            this.cbbChucVu.Size = new System.Drawing.Size(191, 30);
+            this.cbbChucVu.Size = new System.Drawing.Size(191, 29);
             this.cbbChucVu.TabIndex = 65;
             this.cbbChucVu.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cbbChucVu_MouseClick);
             // 
@@ -129,12 +129,13 @@ namespace Quan_Ly_Thu_Vien
             this.btThoat.Size = new System.Drawing.Size(36, 36);
             this.btThoat.TabIndex = 64;
             this.btThoat.UseVisualStyleBackColor = true;
+            this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
             // 
             // dTP_NgaySinhNV
             // 
             this.dTP_NgaySinhNV.CheckedState.Parent = this.dTP_NgaySinhNV;
             this.dTP_NgaySinhNV.FillColor = System.Drawing.Color.Empty;
-            this.dTP_NgaySinhNV.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dTP_NgaySinhNV.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dTP_NgaySinhNV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(237)))), ((int)(((byte)(15)))));
             this.dTP_NgaySinhNV.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dTP_NgaySinhNV.HoverState.Parent = this.dTP_NgaySinhNV;
@@ -151,7 +152,7 @@ namespace Quan_Ly_Thu_Vien
             // txbMaNV
             // 
             this.txbMaNV.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbMaNV.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbMaNV.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbMaNV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(237)))), ((int)(((byte)(15)))));
             this.txbMaNV.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(237)))), ((int)(((byte)(15)))));
             this.txbMaNV.HintText = "Mã nhân viên";
@@ -170,11 +171,11 @@ namespace Quan_Ly_Thu_Vien
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(237)))), ((int)(((byte)(15)))));
             this.label5.Location = new System.Drawing.Point(54, 198);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(86, 23);
+            this.label5.Size = new System.Drawing.Size(83, 22);
             this.label5.TabIndex = 60;
             this.label5.Text = "Chức vụ:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -182,7 +183,7 @@ namespace Quan_Ly_Thu_Vien
             // txbSDTNV
             // 
             this.txbSDTNV.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbSDTNV.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbSDTNV.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbSDTNV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(237)))), ((int)(((byte)(15)))));
             this.txbSDTNV.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(237)))), ((int)(((byte)(15)))));
             this.txbSDTNV.HintText = "gồm 10 số";
@@ -203,7 +204,7 @@ namespace Quan_Ly_Thu_Vien
             // txbTenNV
             // 
             this.txbTenNV.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbTenNV.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbTenNV.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbTenNV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(237)))), ((int)(((byte)(15)))));
             this.txbTenNV.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(237)))), ((int)(((byte)(15)))));
             this.txbTenNV.HintText = "Tên nhân viên";
@@ -223,11 +224,11 @@ namespace Quan_Ly_Thu_Vien
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(237)))), ((int)(((byte)(15)))));
             this.label4.Location = new System.Drawing.Point(504, 39);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(127, 23);
+            this.label4.Size = new System.Drawing.Size(121, 22);
             this.label4.TabIndex = 57;
             this.label4.Text = "Số điện thoại:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -235,11 +236,11 @@ namespace Quan_Ly_Thu_Vien
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(237)))), ((int)(((byte)(15)))));
             this.label3.Location = new System.Drawing.Point(51, 277);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 23);
+            this.label3.Size = new System.Drawing.Size(96, 22);
             this.label3.TabIndex = 56;
             this.label3.Text = "Ngày sinh:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -247,11 +248,11 @@ namespace Quan_Ly_Thu_Vien
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(237)))), ((int)(((byte)(15)))));
             this.label2.Location = new System.Drawing.Point(37, 112);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(136, 23);
+            this.label2.Size = new System.Drawing.Size(133, 22);
             this.label2.TabIndex = 55;
             this.label2.Text = "Tên nhân viên:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -259,11 +260,11 @@ namespace Quan_Ly_Thu_Vien
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(237)))), ((int)(((byte)(15)))));
             this.label1.Location = new System.Drawing.Point(38, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 22);
+            this.label1.Size = new System.Drawing.Size(129, 22);
             this.label1.TabIndex = 54;
             this.label1.Text = "Mã nhân viên:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -276,7 +277,7 @@ namespace Quan_Ly_Thu_Vien
             // txbTenDangNhap
             // 
             this.txbTenDangNhap.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbTenDangNhap.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbTenDangNhap.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbTenDangNhap.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(237)))), ((int)(((byte)(15)))));
             this.txbTenDangNhap.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(237)))), ((int)(((byte)(15)))));
             this.txbTenDangNhap.HintText = "Chỉ bảo gồm chữ và số";
@@ -296,11 +297,11 @@ namespace Quan_Ly_Thu_Vien
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(237)))), ((int)(((byte)(15)))));
             this.label6.Location = new System.Drawing.Point(479, 112);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(147, 23);
+            this.label6.Size = new System.Drawing.Size(144, 22);
             this.label6.TabIndex = 68;
             this.label6.Text = "Tên đăng nhập: ";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -308,7 +309,7 @@ namespace Quan_Ly_Thu_Vien
             // txbMatKhau
             // 
             this.txbMatKhau.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbMatKhau.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbMatKhau.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbMatKhau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(237)))), ((int)(((byte)(15)))));
             this.txbMatKhau.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(237)))), ((int)(((byte)(15)))));
             this.txbMatKhau.HintText = "Mật khẩu";
@@ -327,11 +328,11 @@ namespace Quan_Ly_Thu_Vien
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(237)))), ((int)(((byte)(15)))));
             this.label7.Location = new System.Drawing.Point(510, 194);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(98, 23);
+            this.label7.Size = new System.Drawing.Size(94, 22);
             this.label7.TabIndex = 70;
             this.label7.Text = "Mật khẩu:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -339,7 +340,7 @@ namespace Quan_Ly_Thu_Vien
             // txbXacNhanMK
             // 
             this.txbXacNhanMK.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbXacNhanMK.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbXacNhanMK.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbXacNhanMK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(237)))), ((int)(((byte)(15)))));
             this.txbXacNhanMK.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(237)))), ((int)(((byte)(15)))));
             this.txbXacNhanMK.HintText = "Mật khẩu";
@@ -359,11 +360,11 @@ namespace Quan_Ly_Thu_Vien
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(237)))), ((int)(((byte)(15)))));
             this.label8.Location = new System.Drawing.Point(448, 280);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(174, 23);
+            this.label8.Size = new System.Drawing.Size(170, 22);
             this.label8.TabIndex = 72;
             this.label8.Text = "Xác nhận mật khẩu";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -374,7 +375,7 @@ namespace Quan_Ly_Thu_Vien
             // 
             // DangKyNhanVien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
             this.ClientSize = new System.Drawing.Size(909, 410);

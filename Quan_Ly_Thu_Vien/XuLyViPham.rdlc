@@ -26,7 +26,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Left>2.52282in</Left>
+            <Left>2.1374in</Left>
             <Height>0.39583in</Height>
             <Width>2in</Width>
             <Style>
@@ -403,7 +403,7 @@
                     <Value>=Parameters!HoTen.Value</Value>
                     <Style>
                       <FontFamily>Times New Roman</FontFamily>
-                      <FontSize>12pt</FontSize>
+                      <FontSize>14pt</FontSize>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -526,8 +526,12 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>4.35416in</Height>
-        <Style />
+        <Height>4.46875in</Height>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
       </Body>
       <Width>6.5in</Width>
       <Page>
@@ -586,5 +590,5 @@
     </GridLayoutDefinition>
   </ReportParametersLayout>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>d78591d5-c6b5-496d-aa95-efdcdb69d663</rd:ReportID>
+  <rd:ReportID>ba132482-c085-4027-8957-bb19c9a66026</rd:ReportID>
 </Report>

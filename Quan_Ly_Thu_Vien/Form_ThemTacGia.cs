@@ -114,12 +114,20 @@ namespace Quan_Ly_Thu_Vien
 
         private void dtGV_TacGia_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int i = e.RowIndex;
-            TrangThaiBanDau();
-            cbbMaTG.Text = dtGV_TacGia.Rows[i].Cells[0].Value.ToString();
-            txbTenTG.Text = dtGV_TacGia.Rows[i].Cells[1].Value.ToString();
-            dTP_NgaySinhTG.Text = dtGV_TacGia.Rows[i].Cells[2].Value.ToString();
-            txbViTriVaiTro.Text = dtGV_TacGia.Rows[i].Cells[3].Value.ToString();
+            try
+            {
+                int i = e.RowIndex;
+                TrangThaiBanDau();
+                cbbMaTG.Text = dtGV_TacGia.Rows[i].Cells[0].Value.ToString();
+                txbTenTG.Text = dtGV_TacGia.Rows[i].Cells[1].Value.ToString();
+                dTP_NgaySinhTG.Text = dtGV_TacGia.Rows[i].Cells[2].Value.ToString();
+                txbViTriVaiTro.Text = dtGV_TacGia.Rows[i].Cells[3].Value.ToString();
+            }
+            catch(Exception)
+            {
+
+            }
+            
         }
         void TrangThaiBanDau()
         {

@@ -78,27 +78,35 @@ namespace Quan_Ly_Thu_Vien
 
         private void dtgv_loadDG_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            using (Model_QuanLi_ThuVien qltv = new Model_QuanLi_ThuVien())
+            try
             {
-                TrangThaiBanDau();
-                int i = e.RowIndex;
-                txbMaDG.Text = dtgv_loadDG.Rows[i].Cells[0].Value.ToString();
-                txbTenDG.Text = dtgv_loadDG.Rows[i].Cells[1].Value.ToString();
-                dtpNgaySinhDG.Text = dtgv_loadDG.Rows[i].Cells[2].Value.ToString();
-                txbDonViDG.Text = dtgv_loadDG.Rows[i].Cells[3].Value.ToString();
-                txbSdtDG.Text = dtgv_loadDG.Rows[i].Cells[4].Value.ToString();
-                dtpNgayDK.Text = dtgv_loadDG.Rows[i].Cells[5].Value.ToString();
-                dtpNgayHH.Text = dtgv_loadDG.Rows[i].Cells[6].Value.ToString();
-                TaiKhoanDG TK = qltv.TaiKhoanDGs.Where(p => p.MaDocGia == txbMaDG.Text).FirstOrDefault();
-                txbTaiKhoanDG.Text = TK.TenDangNhap;
-                txbMatKhauDG.Text = TK.MatKhau;
-                if (dtgv_loadDG.Rows[i].Cells[7].Value == null) txbLoaiDG.Text = "NULL";
-                else txbLoaiDG.Text = dtgv_loadDG.Rows[i].Cells[7].Value.ToString();
+                using (Model_QuanLi_ThuVien qltv = new Model_QuanLi_ThuVien())
+                {
+                    TrangThaiBanDau();
+                    int i = e.RowIndex;
+                    txbMaDG.Text = dtgv_loadDG.Rows[i].Cells[0].Value.ToString();
+                    txbTenDG.Text = dtgv_loadDG.Rows[i].Cells[1].Value.ToString();
+                    dtpNgaySinhDG.Text = dtgv_loadDG.Rows[i].Cells[2].Value.ToString();
+                    txbDonViDG.Text = dtgv_loadDG.Rows[i].Cells[3].Value.ToString();
+                    txbSdtDG.Text = dtgv_loadDG.Rows[i].Cells[4].Value.ToString();
+                    dtpNgayDK.Text = dtgv_loadDG.Rows[i].Cells[5].Value.ToString();
+                    dtpNgayHH.Text = dtgv_loadDG.Rows[i].Cells[6].Value.ToString();
+                    TaiKhoanDG TK = qltv.TaiKhoanDGs.Where(p => p.MaDocGia == txbMaDG.Text).FirstOrDefault();
+                    txbTaiKhoanDG.Text = TK.TenDangNhap;
+                    txbMatKhauDG.Text = TK.MatKhau;
+                    if (dtgv_loadDG.Rows[i].Cells[7].Value == null) txbLoaiDG.Text = "NULL";
+                    else txbLoaiDG.Text = dtgv_loadDG.Rows[i].Cells[7].Value.ToString();
 
-                DocGia dg = qltv.DocGias.Where(p => p.MaDocGia == txbMaDG.Text).FirstOrDefault();
-                Byte_HinhAnh = (byte[])dg.HinhAnh;
-                ptbAnhDS.Image = ByteToImage((byte[])dg.HinhAnh);
+                    DocGia dg = qltv.DocGias.Where(p => p.MaDocGia == txbMaDG.Text).FirstOrDefault();
+                    Byte_HinhAnh = (byte[])dg.HinhAnh;
+                    ptbAnhDS.Image = ByteToImage((byte[])dg.HinhAnh);
+                }
             }
+            catch (Exception)
+            {
+
+            }
+            
         }
         // sửa
         private byte[] ConvertImageToBytes(string text)
@@ -131,7 +139,6 @@ namespace Quan_Ly_Thu_Vien
         {
             if (arrImage == null)
             {
-                MessageBox.Show("KO co anh");
                 return null;
             }
             MemoryStream ms = new MemoryStream(arrImage, 0, arrImage.Length);

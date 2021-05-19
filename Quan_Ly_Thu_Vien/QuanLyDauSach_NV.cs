@@ -60,7 +60,7 @@ namespace Quan_Ly_Thu_Vien
         {
             btThemDs.Enabled = true;
             btSuaDS.Enabled = true;
-            btXoaDS.Enabled = true;
+            btXoaDS.Enabled = true;          
             txbMaDS.Enabled = false;
             txbTenDS.Enabled = false;
             txbTenNXB.Enabled = false;
@@ -73,6 +73,7 @@ namespace Quan_Ly_Thu_Vien
             btSuaTL.Visible = false;
             btLuuDS.Enabled = false;
             btHuy.Enabled = false;
+            btShowCuonSach.Enabled = false;
         }
 
         
@@ -89,6 +90,7 @@ namespace Quan_Ly_Thu_Vien
             txbTenNXB.Enabled = true;
             txbSotrang.Enabled = true;
             txbGiaTien.Enabled = true;
+            btShowCuonSach.Enabled = false;
         }
 
         private byte[] ConvertImageToBytes(string text)
@@ -227,6 +229,7 @@ namespace Quan_Ly_Thu_Vien
             using (Model_QuanLi_ThuVien qltv = new Model_QuanLi_ThuVien())
             {
                 TrangThaiBanDau();
+                btShowCuonSach.Enabled = true;
                 int i = e.RowIndex;
                 txbMaDS.Text = dtGV_DauSach.Rows[i].Cells[0].Value.ToString();
                 MaDS = txbMaDS.Text;
@@ -313,7 +316,7 @@ namespace Quan_Ly_Thu_Vien
             MaDS = txbMaDS.Text;
             try
             {
-                using (Form_ThemTacGia themtg = new Form_ThemTacGia())
+                using (Form_ThemTheLoai themtg = new Form_ThemTheLoai())
                 {
                     formBackround.StartPosition = FormStartPosition.Manual;
                     formBackround.FormBorderStyle = FormBorderStyle.None;
@@ -337,6 +340,9 @@ namespace Quan_Ly_Thu_Vien
             }
         }
 
-       
+        private void ForgroundPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

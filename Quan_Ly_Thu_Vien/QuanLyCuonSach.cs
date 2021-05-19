@@ -53,8 +53,8 @@ namespace Quan_Ly_Thu_Vien
             btLuuCS.Enabled = false;
             btHuyCS.Enabled = false;
             btThemCS.Enabled = true;
-            btSuaCS.Enabled = true;
-            btXoaCS.Enabled = true;
+            btSuaCS.Enabled = false;
+            btXoaCS.Enabled = false;
         }
 
         
@@ -84,6 +84,8 @@ namespace Quan_Ly_Thu_Vien
             {
                 int i = e.RowIndex;
                 TrangThaiBanDau();
+                btSuaCS.Enabled = true;
+                btXoaCS.Enabled = true;
                 txbMaCS.Text = dtGV_CuonSach.Rows[i].Cells[0].Value.ToString();
                 txbTenCS.Text = dtGV_CuonSach.Rows[i].Cells[1].Value.ToString();
                 txbTinhTrangCS.Text = dtGV_CuonSach.Rows[i].Cells[2].Value.ToString();

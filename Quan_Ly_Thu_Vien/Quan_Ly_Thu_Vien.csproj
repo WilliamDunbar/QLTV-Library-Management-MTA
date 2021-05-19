@@ -122,9 +122,11 @@
     <Compile Include="Database\TheLoai.cs" />
     <Compile Include="Database\TheLoaiDauSach.cs" />
     <Compile Include="Database\TheLoai_DauSach.cs" />
+    <Compile Include="Database\ThongKeDauSach.cs" />
     <Compile Include="Database\ThongTinCuonSach.cs" />
     <Compile Include="Database\ThongTinDauSach.cs" />
     <Compile Include="Database\ThongTinDocGia.cs" />
+    <Compile Include="Database\ThongTinMuon.cs" />
     <Compile Include="Database\ThongTinMuonTra.cs" />
     <Compile Include="Database\ThongTinNhanVien.cs" />
     <Compile Include="Database\ThongTinNopPhat.cs" />
@@ -155,11 +157,23 @@
     <Compile Include="Form_ThemTheLoai.Designer.cs">
       <DependentUpon>Form_ThemTheLoai.cs</DependentUpon>
     </Compile>
+    <Compile Include="GiaHan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GiaHan.Designer.cs">
+      <DependentUpon>GiaHan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MuonMoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MuonMoi.Designer.cs">
+      <DependentUpon>MuonMoi.cs</DependentUpon>
     </Compile>
     <Compile Include="ReportViPham.cs">
       <SubType>Form</SubType>
@@ -242,6 +256,13 @@
     <Compile Include="TraSach.Designer.cs">
       <DependentUpon>TraSach.cs</DependentUpon>
     </Compile>
+    <Compile Include="TT_TacGia_DauSach.cs" />
+    <Compile Include="ViPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViPham.Designer.cs">
+      <DependentUpon>ViPham.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DangKyNhanVien.resx">
       <DependentUpon>DangKyNhanVien.cs</DependentUpon>
     </EmbeddedResource>
@@ -254,8 +275,14 @@
     <EmbeddedResource Include="Form_ThemTheLoai.resx">
       <DependentUpon>Form_ThemTheLoai.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GiaHan.resx">
+      <DependentUpon>GiaHan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MuonMoi.resx">
+      <DependentUpon>MuonMoi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportViPham.resx">
       <DependentUpon>ReportViPham.cs</DependentUpon>
@@ -304,6 +331,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TraSach.resx">
       <DependentUpon>TraSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViPham.resx">
+      <DependentUpon>ViPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XuLyViPham.rdlc" />
     <None Include="bin\Debug\Quan_Ly_Thu_Vien.exe.config" />
@@ -375,6 +405,20 @@
     <Content Include="bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll" />
     <Content Include="bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll" />
     <Content Include="bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll" />
+    <Content Include="bin\Debug\Picture\0.png" />
+    <Content Include="bin\Debug\Picture\1.jpg" />
+    <Content Include="bin\Debug\Picture\2.jpg" />
+    <Content Include="bin\Debug\Picture\3.jpg" />
+    <Content Include="bin\Debug\Picture\4.jpg" />
+    <Content Include="bin\Debug\Picture\DangNhap.gif" />
+    <Content Include="bin\Debug\Picture\icons8-prev-100.png" />
+    <Content Include="bin\Debug\Picture\icons8-prev-90.png" />
+    <Content Include="bin\Debug\Picture\icons8-right-button-90.png" />
+    <Content Include="bin\Debug\Picture\Login.gif" />
+    <Content Include="bin\Debug\Picture\mta.ico" />
+    <Content Include="bin\Debug\Picture\MTA_transparent.png" />
+    <Content Include="bin\Debug\Picture\next.png" />
+    <Content Include="bin\Debug\Picture\tải xuống.png" />
     <Content Include="bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll" />
     <Content Include="bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll" />
     <Content Include="bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll" />
@@ -401,8 +445,10 @@
     <Content Include="Picture\1.jpg" />
     <Content Include="Picture\2.jpg" />
     <Content Include="Picture\3.jpg" />
+    <Content Include="Picture\4.jpg" />
     <Content Include="Picture\DangNhap.gif" />
     <Content Include="Picture\Login.gif" />
+    <Content Include="Picture\mta.ico" />
     <Content Include="Picture\tải xuống.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

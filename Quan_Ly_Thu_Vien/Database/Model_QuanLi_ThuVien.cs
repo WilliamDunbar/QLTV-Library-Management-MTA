@@ -35,6 +35,7 @@ namespace Quan_Ly_Thu_Vien.Database
         public virtual DbSet<ThongTinDauSach> ThongTinDauSaches { get; set; }
         public virtual DbSet<ThongTinDocGia> ThongTinDocGias { get; set; }
         public virtual DbSet<ThongTinMuonTra> ThongTinMuonTras { get; set; }
+        public virtual DbSet<ThongTinMuon> ThongTinMuons { get; set; }
         public virtual DbSet<ThongTinNhanVien> ThongTinNhanViens { get; set; }
         public virtual DbSet<ThongTinNopPhat> ThongTinNopPhats { get; set; }
         public virtual DbSet<ViPham> ViPhams { get; set; }
@@ -290,6 +291,19 @@ namespace Quan_Ly_Thu_Vien.Database
             modelBuilder.Entity<ThongTinMuonTra>()
                 .Property(e => e.MaNVtra)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<ThongTinMuon>()///////////////////
+                .Property(e => e.MaSach)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ThongTinMuon>()//////////////////////
+                .Property(e => e.MaDocGia)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ThongTinMuon>()//////////////////////
+                .Property(e => e.MaNVmuon)
+                .IsUnicode(false);
+
 
             modelBuilder.Entity<ThongTinNhanVien>()
                 .Property(e => e.MaNhanVien)

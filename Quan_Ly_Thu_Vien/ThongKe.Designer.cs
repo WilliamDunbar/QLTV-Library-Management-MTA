@@ -29,11 +29,14 @@ namespace Quan_Ly_Thu_Vien
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2GradientPanel5 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.textBox8 = new System.Windows.Forms.TextBox();
             this.txbSoLuongCs_ChuaMuon = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txbSoLuongCS_DangDuocMuon = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txbSoLuongCS = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -47,7 +50,7 @@ namespace Quan_Ly_Thu_Vien
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.txbSoLuongDG_DangQuaHan = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.txbSoLuotViPham = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txbSoLuongDG_DangMuon = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txbSoLuongDG = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -57,14 +60,17 @@ namespace Quan_Ly_Thu_Vien
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.guna2GradientPanel14 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.dtgrdView_Muon = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.dtgv_ThongKeDS = new Guna.UI2.WinForms.Guna2DataGridView();
             this.cbbNamThongKe = new System.Windows.Forms.ComboBox();
             this.LCBieuDoThongKe = new LiveCharts.WinForms.CartesianChart();
             this.textBox7 = new System.Windows.Forms.TextBox();
+            this.TenDauSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaCuonSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2GradientPanel5.SuspendLayout();
             this.guna2GradientPanel1.SuspendLayout();
             this.guna2GradientPanel14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgrdView_Muon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_ThongKeDS)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2GradientPanel5
@@ -72,6 +78,7 @@ namespace Quan_Ly_Thu_Vien
             this.guna2GradientPanel5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(90)))), ((int)(((byte)(182)))));
             this.guna2GradientPanel5.BorderRadius = 15;
             this.guna2GradientPanel5.BorderThickness = 2;
+            this.guna2GradientPanel5.Controls.Add(this.textBox8);
             this.guna2GradientPanel5.Controls.Add(this.txbSoLuongCs_ChuaMuon);
             this.guna2GradientPanel5.Controls.Add(this.txbSoLuongCS_DangDuocMuon);
             this.guna2GradientPanel5.Controls.Add(this.txbSoLuongCS);
@@ -92,6 +99,20 @@ namespace Quan_Ly_Thu_Vien
             this.guna2GradientPanel5.ShadowDecoration.Parent = this.guna2GradientPanel5;
             this.guna2GradientPanel5.Size = new System.Drawing.Size(974, 195);
             this.guna2GradientPanel5.TabIndex = 35;
+            // 
+            // textBox8
+            // 
+            this.textBox8.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
+            this.textBox8.Location = new System.Drawing.Point(428, 77);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.ReadOnly = true;
+            this.textBox8.Size = new System.Drawing.Size(39, 19);
+            this.textBox8.TabIndex = 55;
+            this.textBox8.Text = "VNĐ";
             // 
             // txbSoLuongCs_ChuaMuon
             // 
@@ -297,7 +318,7 @@ namespace Quan_Ly_Thu_Vien
             this.guna2GradientPanel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(90)))), ((int)(((byte)(182)))));
             this.guna2GradientPanel1.BorderRadius = 15;
             this.guna2GradientPanel1.BorderThickness = 2;
-            this.guna2GradientPanel1.Controls.Add(this.txbSoLuongDG_DangQuaHan);
+            this.guna2GradientPanel1.Controls.Add(this.txbSoLuotViPham);
             this.guna2GradientPanel1.Controls.Add(this.txbSoLuongDG_DangMuon);
             this.guna2GradientPanel1.Controls.Add(this.txbSoLuongDG);
             this.guna2GradientPanel1.Controls.Add(this.textBox1);
@@ -312,24 +333,24 @@ namespace Quan_Ly_Thu_Vien
             this.guna2GradientPanel1.Size = new System.Drawing.Size(532, 195);
             this.guna2GradientPanel1.TabIndex = 36;
             // 
-            // txbSoLuongDG_DangQuaHan
+            // txbSoLuotViPham
             // 
-            this.txbSoLuongDG_DangQuaHan.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbSoLuongDG_DangQuaHan.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbSoLuongDG_DangQuaHan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(152)))), ((int)(((byte)(0)))));
-            this.txbSoLuongDG_DangQuaHan.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(136)))), ((int)(((byte)(77)))));
-            this.txbSoLuongDG_DangQuaHan.HintText = "";
-            this.txbSoLuongDG_DangQuaHan.isPassword = false;
-            this.txbSoLuongDG_DangQuaHan.LineFocusedColor = System.Drawing.Color.Transparent;
-            this.txbSoLuongDG_DangQuaHan.LineIdleColor = System.Drawing.Color.Transparent;
-            this.txbSoLuongDG_DangQuaHan.LineMouseHoverColor = System.Drawing.Color.Transparent;
-            this.txbSoLuongDG_DangQuaHan.LineThickness = 1;
-            this.txbSoLuongDG_DangQuaHan.Location = new System.Drawing.Point(298, 130);
-            this.txbSoLuongDG_DangQuaHan.Margin = new System.Windows.Forms.Padding(4);
-            this.txbSoLuongDG_DangQuaHan.Name = "txbSoLuongDG_DangQuaHan";
-            this.txbSoLuongDG_DangQuaHan.Size = new System.Drawing.Size(195, 27);
-            this.txbSoLuongDG_DangQuaHan.TabIndex = 47;
-            this.txbSoLuongDG_DangQuaHan.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txbSoLuotViPham.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbSoLuotViPham.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbSoLuotViPham.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(152)))), ((int)(((byte)(0)))));
+            this.txbSoLuotViPham.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(136)))), ((int)(((byte)(77)))));
+            this.txbSoLuotViPham.HintText = "";
+            this.txbSoLuotViPham.isPassword = false;
+            this.txbSoLuotViPham.LineFocusedColor = System.Drawing.Color.Transparent;
+            this.txbSoLuotViPham.LineIdleColor = System.Drawing.Color.Transparent;
+            this.txbSoLuotViPham.LineMouseHoverColor = System.Drawing.Color.Transparent;
+            this.txbSoLuotViPham.LineThickness = 1;
+            this.txbSoLuotViPham.Location = new System.Drawing.Point(298, 130);
+            this.txbSoLuotViPham.Margin = new System.Windows.Forms.Padding(4);
+            this.txbSoLuotViPham.Name = "txbSoLuotViPham";
+            this.txbSoLuotViPham.Size = new System.Drawing.Size(195, 27);
+            this.txbSoLuotViPham.TabIndex = 47;
+            this.txbSoLuotViPham.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // txbSoLuongDG_DangMuon
             // 
@@ -381,7 +402,7 @@ namespace Quan_Ly_Thu_Vien
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(209, 25);
             this.textBox1.TabIndex = 38;
-            this.textBox1.Text = "Số lượng ĐG quá hạn:";
+            this.textBox1.Text = "Số lượt vi phạm:";
             // 
             // textBox2
             // 
@@ -449,9 +470,9 @@ namespace Quan_Ly_Thu_Vien
             this.bunifuCustomLabel5.Location = new System.Drawing.Point(140, 419);
             this.bunifuCustomLabel5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
-            this.bunifuCustomLabel5.Size = new System.Drawing.Size(192, 24);
+            this.bunifuCustomLabel5.Size = new System.Drawing.Size(177, 24);
             this.bunifuCustomLabel5.TabIndex = 47;
-            this.bunifuCustomLabel5.Text = "Số lượng sách mượn";
+            this.bunifuCustomLabel5.Text = "Thống kê đầu sách";
             this.bunifuCustomLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // guna2GradientPanel14
@@ -461,104 +482,107 @@ namespace Quan_Ly_Thu_Vien
             this.guna2GradientPanel14.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
             this.guna2GradientPanel14.BorderRadius = 15;
             this.guna2GradientPanel14.BorderThickness = 2;
-            this.guna2GradientPanel14.Controls.Add(this.dtgrdView_Muon);
+            this.guna2GradientPanel14.Controls.Add(this.dtgv_ThongKeDS);
             this.guna2GradientPanel14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(49)))), ((int)(((byte)(1)))));
-            this.guna2GradientPanel14.Location = new System.Drawing.Point(74, 437);
+            this.guna2GradientPanel14.Location = new System.Drawing.Point(70, 437);
             this.guna2GradientPanel14.Margin = new System.Windows.Forms.Padding(2);
             this.guna2GradientPanel14.Name = "guna2GradientPanel14";
             this.guna2GradientPanel14.ShadowDecoration.Parent = this.guna2GradientPanel14;
-            this.guna2GradientPanel14.Size = new System.Drawing.Size(492, 421);
+            this.guna2GradientPanel14.Size = new System.Drawing.Size(541, 421);
             this.guna2GradientPanel14.TabIndex = 46;
             // 
-            // dtgrdView_Muon
+            // dtgv_ThongKeDS
             // 
-            this.dtgrdView_Muon.AllowUserToAddRows = false;
-            this.dtgrdView_Muon.AllowUserToDeleteRows = false;
-            this.dtgrdView_Muon.AllowUserToResizeColumns = false;
-            this.dtgrdView_Muon.AllowUserToResizeRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
-            this.dtgrdView_Muon.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
-            this.dtgrdView_Muon.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dtgv_ThongKeDS.AllowUserToAddRows = false;
+            this.dtgv_ThongKeDS.AllowUserToDeleteRows = false;
+            this.dtgv_ThongKeDS.AllowUserToResizeColumns = false;
+            this.dtgv_ThongKeDS.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dtgv_ThongKeDS.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dtgv_ThongKeDS.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtgrdView_Muon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgrdView_Muon.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(255)))), ((int)(((byte)(212)))));
-            this.dtgrdView_Muon.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dtgrdView_Muon.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dtgrdView_Muon.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(254)))), ((int)(((byte)(251)))));
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(168)))));
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgrdView_Muon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
-            this.dtgrdView_Muon.ColumnHeadersHeight = 30;
-            this.dtgrdView_Muon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dtgrdView_Muon.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(49)))), ((int)(((byte)(1)))));
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(255)))), ((int)(((byte)(212)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgrdView_Muon.DefaultCellStyle = dataGridViewCellStyle15;
-            this.dtgrdView_Muon.EnableHeadersVisualStyles = false;
-            this.dtgrdView_Muon.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(242)))), ((int)(((byte)(117)))));
-            this.dtgrdView_Muon.Location = new System.Drawing.Point(11, 13);
-            this.dtgrdView_Muon.Margin = new System.Windows.Forms.Padding(2);
-            this.dtgrdView_Muon.Name = "dtgrdView_Muon";
-            this.dtgrdView_Muon.ReadOnly = true;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(168)))));
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(168)))));
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgrdView_Muon.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
-            this.dtgrdView_Muon.RowHeadersVisible = false;
-            this.dtgrdView_Muon.RowHeadersWidth = 62;
-            this.dtgrdView_Muon.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dtgrdView_Muon.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(43)))), ((int)(((byte)(72)))));
-            this.dtgrdView_Muon.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtgrdView_Muon.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(242)))), ((int)(((byte)(117)))));
-            this.dtgrdView_Muon.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(242)))), ((int)(((byte)(117)))));
-            this.dtgrdView_Muon.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(43)))), ((int)(((byte)(72)))));
-            this.dtgrdView_Muon.RowTemplate.Height = 28;
-            this.dtgrdView_Muon.RowTemplate.ReadOnly = true;
-            this.dtgrdView_Muon.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgrdView_Muon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgrdView_Muon.Size = new System.Drawing.Size(470, 396);
-            this.dtgrdView_Muon.TabIndex = 10;
-            this.dtgrdView_Muon.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
-            this.dtgrdView_Muon.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dtgrdView_Muon.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dtgrdView_Muon.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dtgrdView_Muon.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dtgrdView_Muon.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dtgrdView_Muon.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(255)))), ((int)(((byte)(212)))));
-            this.dtgrdView_Muon.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(242)))), ((int)(((byte)(117)))));
-            this.dtgrdView_Muon.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
-            this.dtgrdView_Muon.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dtgrdView_Muon.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtgrdView_Muon.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(254)))), ((int)(((byte)(251)))));
-            this.dtgrdView_Muon.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dtgrdView_Muon.ThemeStyle.HeaderStyle.Height = 30;
-            this.dtgrdView_Muon.ThemeStyle.ReadOnly = true;
-            this.dtgrdView_Muon.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dtgrdView_Muon.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dtgrdView_Muon.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.dtgrdView_Muon.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(49)))), ((int)(((byte)(1)))));
-            this.dtgrdView_Muon.ThemeStyle.RowsStyle.Height = 28;
-            this.dtgrdView_Muon.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(255)))), ((int)(((byte)(212)))));
-            this.dtgrdView_Muon.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.dtgv_ThongKeDS.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgv_ThongKeDS.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(255)))), ((int)(((byte)(212)))));
+            this.dtgv_ThongKeDS.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtgv_ThongKeDS.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(192)))), ((int)(((byte)(121)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(49)))), ((int)(((byte)(1)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(192)))), ((int)(((byte)(121)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(49)))), ((int)(((byte)(1)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgv_ThongKeDS.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dtgv_ThongKeDS.ColumnHeadersHeight = 30;
+            this.dtgv_ThongKeDS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dtgv_ThongKeDS.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TenDauSach,
+            this.MaCuonSach,
+            this.TinhTrang});
+            this.dtgv_ThongKeDS.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(216)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgv_ThongKeDS.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dtgv_ThongKeDS.EnableHeadersVisualStyles = false;
+            this.dtgv_ThongKeDS.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(203)))), ((int)(((byte)(249)))));
+            this.dtgv_ThongKeDS.Location = new System.Drawing.Point(2, 8);
+            this.dtgv_ThongKeDS.Margin = new System.Windows.Forms.Padding(2);
+            this.dtgv_ThongKeDS.Name = "dtgv_ThongKeDS";
+            this.dtgv_ThongKeDS.ReadOnly = true;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(168)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(168)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgv_ThongKeDS.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dtgv_ThongKeDS.RowHeadersVisible = false;
+            this.dtgv_ThongKeDS.RowHeadersWidth = 62;
+            this.dtgv_ThongKeDS.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dtgv_ThongKeDS.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(255)))), ((int)(((byte)(212)))));
+            this.dtgv_ThongKeDS.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtgv_ThongKeDS.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(43)))), ((int)(((byte)(72)))));
+            this.dtgv_ThongKeDS.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(203)))), ((int)(((byte)(249)))));
+            this.dtgv_ThongKeDS.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.dtgv_ThongKeDS.RowTemplate.Height = 28;
+            this.dtgv_ThongKeDS.RowTemplate.ReadOnly = true;
+            this.dtgv_ThongKeDS.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgv_ThongKeDS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgv_ThongKeDS.Size = new System.Drawing.Size(537, 411);
+            this.dtgv_ThongKeDS.TabIndex = 75;
+            this.dtgv_ThongKeDS.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
+            this.dtgv_ThongKeDS.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dtgv_ThongKeDS.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dtgv_ThongKeDS.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dtgv_ThongKeDS.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dtgv_ThongKeDS.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dtgv_ThongKeDS.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(255)))), ((int)(((byte)(212)))));
+            this.dtgv_ThongKeDS.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(203)))), ((int)(((byte)(249)))));
+            this.dtgv_ThongKeDS.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(192)))), ((int)(((byte)(121)))));
+            this.dtgv_ThongKeDS.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised;
+            this.dtgv_ThongKeDS.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtgv_ThongKeDS.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(49)))), ((int)(((byte)(1)))));
+            this.dtgv_ThongKeDS.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dtgv_ThongKeDS.ThemeStyle.HeaderStyle.Height = 30;
+            this.dtgv_ThongKeDS.ThemeStyle.ReadOnly = true;
+            this.dtgv_ThongKeDS.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dtgv_ThongKeDS.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dtgv_ThongKeDS.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtgv_ThongKeDS.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(216)))));
+            this.dtgv_ThongKeDS.ThemeStyle.RowsStyle.Height = 28;
+            this.dtgv_ThongKeDS.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dtgv_ThongKeDS.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
             // cbbNamThongKe
             // 
-            this.cbbNamThongKe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
+            this.cbbNamThongKe.BackColor = System.Drawing.SystemColors.Control;
             this.cbbNamThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbbNamThongKe.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbNamThongKe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
@@ -567,7 +591,7 @@ namespace Quan_Ly_Thu_Vien
             "2019",
             "2020",
             "2021"});
-            this.cbbNamThongKe.Location = new System.Drawing.Point(1436, 414);
+            this.cbbNamThongKe.Location = new System.Drawing.Point(1436, 410);
             this.cbbNamThongKe.Name = "cbbNamThongKe";
             this.cbbNamThongKe.Size = new System.Drawing.Size(125, 30);
             this.cbbNamThongKe.TabIndex = 48;
@@ -592,13 +616,49 @@ namespace Quan_Ly_Thu_Vien
             this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox7.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(87)))), ((int)(((byte)(34)))));
-            this.textBox7.Location = new System.Drawing.Point(1368, 414);
+            this.textBox7.Location = new System.Drawing.Point(1368, 411);
             this.textBox7.Margin = new System.Windows.Forms.Padding(2);
             this.textBox7.Name = "textBox7";
             this.textBox7.ReadOnly = true;
             this.textBox7.Size = new System.Drawing.Size(63, 25);
             this.textBox7.TabIndex = 50;
             this.textBox7.Text = "Năm:";
+            // 
+            // TenDauSach
+            // 
+            this.TenDauSach.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TenDauSach.DataPropertyName = "TenDauSach";
+            this.TenDauSach.FillWeight = 130F;
+            this.TenDauSach.HeaderText = "Tên đầu sách";
+            this.TenDauSach.Name = "TenDauSach";
+            this.TenDauSach.ReadOnly = true;
+            this.TenDauSach.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // MaCuonSach
+            // 
+            this.MaCuonSach.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.MaCuonSach.DataPropertyName = "SoLuotMuon";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.MaCuonSach.DefaultCellStyle = dataGridViewCellStyle3;
+            this.MaCuonSach.FillWeight = 35F;
+            this.MaCuonSach.HeaderText = "Số lượt mượn";
+            this.MaCuonSach.Name = "MaCuonSach";
+            this.MaCuonSach.ReadOnly = true;
+            this.MaCuonSach.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.MaCuonSach.Width = 158;
+            // 
+            // TinhTrang
+            // 
+            this.TinhTrang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.TinhTrang.DataPropertyName = "SoLuong";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.TinhTrang.DefaultCellStyle = dataGridViewCellStyle4;
+            this.TinhTrang.FillWeight = 42.34952F;
+            this.TinhTrang.HeaderText = "Số cuốn sách";
+            this.TinhTrang.Name = "TinhTrang";
+            this.TinhTrang.ReadOnly = true;
+            this.TinhTrang.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.TinhTrang.Width = 151;
             // 
             // ThongKe
             // 
@@ -623,7 +683,7 @@ namespace Quan_Ly_Thu_Vien
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();
             this.guna2GradientPanel14.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgrdView_Muon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_ThongKeDS)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -639,7 +699,7 @@ namespace Quan_Ly_Thu_Vien
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.TextBox textBox9;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txbSoLuongDG_DangQuaHan;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txbSoLuotViPham;
         private Bunifu.Framework.UI.BunifuMaterialTextbox txbSoLuongDG_DangMuon;
         private Bunifu.Framework.UI.BunifuMaterialTextbox txbSoLuongDG;
         private System.Windows.Forms.TextBox textBox1;
@@ -655,9 +715,13 @@ namespace Quan_Ly_Thu_Vien
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel14;
-        private Guna.UI2.WinForms.Guna2DataGridView dtgrdView_Muon;
         private System.Windows.Forms.ComboBox cbbNamThongKe;
         private LiveCharts.WinForms.CartesianChart LCBieuDoThongKe;
         private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBox8;
+        private Guna.UI2.WinForms.Guna2DataGridView dtgv_ThongKeDS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenDauSach;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaCuonSach;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TinhTrang;
     }
 }

@@ -116,6 +116,18 @@ namespace Quan_Ly_Thu_Vien
 
         private void btHuy_Click(object sender, EventArgs e)
         {
+            txbMaNV.Text = "";
+            txbTenNV.Text = "";
+            dTP_NgaySinhNV.Text = "";
+            cbbChucVu.Text = "";
+            txbSDTNV.Text = "";
+            txbTenDangNhap.Text = "";
+            txbMatKhau.Text = "";
+            txbXacNhanMK.Text = "";
+        }
+
+        private void btThoat_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
     }

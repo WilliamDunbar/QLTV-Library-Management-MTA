@@ -64,6 +64,8 @@ namespace Quan_Ly_Thu_Vien
                     }
                 }
                 txbSoLuongDG_DangMuon.Text = SoLuongDG_DangMuon.ToString();
+                var listViPham = from kq in qltv.XuLyViPhams select kq.MaDocGia;
+                txbSoLuotViPham.Text = listViPham.ToList().Count.ToString();
             }
         }
         //int soluongsinhviengioi()
@@ -129,13 +131,22 @@ namespace Quan_Ly_Thu_Vien
             }
             
         }
+        void Load_ThongKeDS()
+        {
+            using (Model_QuanLi_ThuVien qltv = new Model_QuanLi_ThuVien())
+            {
+                var ThongKe = qltv.Database.SqlQuery<ThongKeDauSach>("exec show_ThongKeDauSach ");
+                dtgv_ThongKeDS.DataSource = ThongKe.ToList();
+            }
+
+        }
 
         private void ThongKe_Load(object sender, EventArgs e)
         {
 
             Load_ThongKeSach();
             Load_ThongKeDG();
-
+            Load_ThongKeDS();
             Func<double, string> formatFunc = (x) => string.Format("{0:0.0}", x);
             LCBieuDoThongKe.AxisX.Add(new Axis
             {
@@ -175,5 +186,7 @@ namespace Quan_Ly_Thu_Vien
 
             Load_LineChart();
         }
+
+    
     }
 }

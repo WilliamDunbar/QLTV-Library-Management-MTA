@@ -1,0 +1,102 @@
+  private void TT_bandau()
+        {
+            txtTenDG.Text = "";
+            txtViPham.Text = "";
+            txtTenCuonSach.Text = "";
+            txtSachMuon.Text = "";
+            cboTinhTrang.Text = "";
+
+            dtpNgayMuon.Text = DateTime.Now.ToShortDateString();
+            dtpNgayMuon.Enabled = false;
+            dtpNgayTra.Text = DateTime.Now.ToShortDateString();
+            txtMaDG.Text = "";
+            txtMaCuonSach.Text = "";
+        }
+      private void load_TTmuon()
+        {
+            Model_QuanLi_ThuVien qltv = new Model_QuanLi_ThuVien();
+            SqlParameter idParam = new SqlParameter { ParameterName = "NoiDung", Value = txtMaDG.Text };
+            //var lstSoSachMuon = qltv.ThongTinMuons.SqlQuery("TimKiemMaDG @NoiDung", idParam).ToList();
+            var lstSoSachMuon = from kq in qltv.ThongTinMuons where kq.MaDocGia == txtMaDG.Text select kq.MaSach;
+            txtSachMuon.Text = lstSoSachMuon.ToList().Count.ToString();
+            var listSoLuotViPham = from kq in qltv.XuLyViPhams where kq.MaDocGia == txtMaDG.Text select kq.LyDo;
+            txtViPham.Text = listSoLuotViPham.ToList().Count.ToString();
+
+            var lstMuonTra = qltv.ThongTinMuons.SqlQuery("select * from ThongTinMuon where MaDocGia = @NoiDung ", idParam).ToList();
+            dtgrdView_Muon.DataSource = lstMuonTra;
+            ThongTinCuonSach TTCS = qltv.ThongTinCuonSaches.Where(p => p.MaSach == txtMaCuonSach.Text).SingleOrDefault();
+            txtTenCuonSach.Text = TTCS.TenDauSach.ToString();
+            cboTinhTrang.Text = TTCS.TinhTrang.ToString();
+
+        }
+  private void btnChoMuon0_Click(object sender, EventArgs e)
+        {
+            Model_QuanLi_ThuVien MtV2 = new Model_QuanLi_ThuVien();
+            SqlParameter[] idParam =
+               { new SqlParameter { ParameterName="MaSach", Value=txtMaCuonSach.Text },
+                new SqlParameter { ParameterName = "MaDocGia", Value =txtMaDG.Text },
+                new SqlParameter { ParameterName = "MaNVMuon", Value = Login.MaNguoiDung },
+                new SqlParameter { ParameterName = "NgayMuon", Value = dtpNgayMuon.Text  },
+                 new SqlParameter { ParameterName = "NgayHanTra", Value = dtpNgayTra.Text },
+    
+
+                };
+            //   int Check_Sach = MtV2.Database.ExecuteSqlCommand("MuonMoiSach @MaSach,@MaDocGia,@MaNVMuon,@NgayMuon,@NgayHanTra", idParam);
+            int Check_Sach = MtV2.Database.ExecuteSqlCommand("MuonMoiSach @MaSach,@MaDocGia,@MaNVMuon,@NgayMuon,@NgayHanTra", idParam);
+            if (Check_Sach >= 0)
+            {
+                MessageBox.Show("cho mượn sách thành công ");
+                load_TTmuon();
+
+            }
+            btnChoMuon.Enabled = false;
+        }
+           private void btnKiemTra_Click(object sender, EventArgs e)
+        {
+            using (Model_QuanLi_ThuVien qltv = new Model_QuanLi_ThuVien())
+            {
+                if (txtMaDG.Text == "")
+                {
+                    MessageBox.Show("Bạn đã nhập thiếu thông tin độc giả");
+                }
+                else if (txtMaCuonSach.Text == "")
+                {
+                    MessageBox.Show("Bạn đã nhập thiếu thông tin cuốn sách");
+                }
+                else
+                {  //////////////////////////
+                    try
+                    {   /// thông tin cuốn sach
+                        ThongTinCuonSach TTCS = qltv.ThongTinCuonSaches.Where(p => p.MaSach == txtMaCuonSach.Text).SingleOrDefault();
+                        ////////////////thông tin độc giả
+                        var listSoLuotViPham = from kq in qltv.XuLyViPhams where kq.MaDocGia == txtMaDG.Text select kq.LyDo;
+                        ThongTinDocGia TTDG = qltv.ThongTinDocGias.Where(p => p.MaDocGia == txtMaDG.Text).SingleOrDefault();
+                        //////////////////////////////////
+                        if (TTCS == null || TTDG == null)
+                        { MessageBox.Show("Yêu cầu bạn nhập đúng thông tin mã độc giả và mã cuốn sách"); }
+                        else
+                        {
+                            txtTenDG.Text = TTDG.TenDocGia.ToString();
+                            txtTenCuonSach.Text = TTCS.TenDauSach.ToString();
+                            cboTinhTrang.Text = TTCS.TinhTrang.ToString();
+                            load_TTmuon();
+                            muonsach();
+
+                        }
+
+
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("");
+                    }
+                }
+            }
+        }
+  
+                  private void btnHuy0_Click(object sender, EventArgs e)
+        {
+            TT_bandau();
+            btnChoMuon.Enabled = false;
+
+        }

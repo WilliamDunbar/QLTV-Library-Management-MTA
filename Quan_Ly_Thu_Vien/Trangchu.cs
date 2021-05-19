@@ -22,7 +22,7 @@ namespace Quan_Ly_Thu_Vien
         public Trangchu()
         {
             InitializeComponent();
-            
+
         }
 
         private void exitbutton_Click(object sender, EventArgs e)
@@ -64,7 +64,7 @@ namespace Quan_Ly_Thu_Vien
         private void iconBt_Sach_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
-            if(Login.ThuThuOrDocGia == true)
+            if (Login.ThuThuOrDocGia == true)
             {
                 OpenChildForm(new QuanLyDauSach_NV());
             }
@@ -72,7 +72,7 @@ namespace Quan_Ly_Thu_Vien
             {
                 OpenChildForm(new QuanLyDauSach_DG());
             }
-            
+
         }
 
         private void iconBtMuonSach_Click(object sender, EventArgs e)
@@ -176,7 +176,7 @@ namespace Quan_Ly_Thu_Vien
                 {
                     if (this.WindowState == FormWindowState.Normal) tk.Location = new Point(1550, 145);
                     else tk.Location = new Point(1600, 125);
-                    if(Login.ThuThuOrDocGia == false)
+                    if (Login.ThuThuOrDocGia == false)
                     {
                         tk.BtDangKyTK.Visible = false;
                     }
@@ -196,9 +196,14 @@ namespace Quan_Ly_Thu_Vien
 
         private void Trangchu_Load(object sender, EventArgs e)
         {
+            panelCheck.Parent = SliderPicture;
+            btnPrevious.BackColor = Color.Transparent;
+            btnPrevious.Parent = SliderPicture;
+            btnNext.BackColor = Color.Transparent;
+            btnNext.Parent = SliderPicture;
             using (Model_QuanLi_ThuVien qltv = new Model_QuanLi_ThuVien())
             {
-                if(Login.ThuThuOrDocGia == true)
+                if (Login.ThuThuOrDocGia == true)
                 {
                     NhanVien NV = qltv.NhanViens.Where(p => p.MaNhanVien == Login.MaNguoiDung).FirstOrDefault();
                     accountChip.Text = NV.HoTen;
@@ -209,24 +214,69 @@ namespace Quan_Ly_Thu_Vien
                     accountChip.Text = DG.TenDocGia;
                 }
 
-               
+
             }
         }
         //************
 
         private void Slider()
         {
-            if(ImageNumber == 4)
+            if (ImageNumber == 5)
             {
                 ImageNumber = 1;
             }
-            SliderPicture.ImageLocation = string.Format(@"D:\Quan_ly_thu_vien\QLTV-Library-Management-MTA\Quan_Ly_Thu_Vien\Picture\{0}.jpg", ImageNumber);
-            ImageNumber++;
+            else if (ImageNumber == 0)
+            {
+                ImageNumber = 4;
+            }
+            SliderPicture.ImageLocation = string.Format(@"Picture\{0}.jpg", ImageNumber);
+            if (ImageNumber == 1) check1.Checked = true;
+            else if (ImageNumber == 2) check2.Checked = true;
+            else if (ImageNumber == 3) check3.Checked = true;
+            else if (ImageNumber == 4) check4.Checked = true;
+
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            ImageNumber++;
             Slider();
+
+        }
+
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            ImageNumber--;
+            timer1.Start();
+            Slider();
+        }
+
+
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            ImageNumber++;
+            timer1.Start();
+            Slider();
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ShadowBar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

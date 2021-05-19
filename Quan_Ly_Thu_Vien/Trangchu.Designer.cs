@@ -35,10 +35,11 @@ namespace Quan_Ly_Thu_Vien
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.accountChip = new FontAwesome.Sharp.IconButton();
             this.ShadowBar = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.exitbutton = new FontAwesome.Sharp.IconButton();
             this.FullScreen = new FontAwesome.Sharp.IconButton();
             this.panelDesktop = new System.Windows.Forms.Panel();
+            this.btnNext = new Guna.UI2.WinForms.Guna2Button();
+            this.btnPrevious = new Guna.UI2.WinForms.Guna2Button();
             this.SliderPicture = new System.Windows.Forms.PictureBox();
             this.MTA = new System.Windows.Forms.PictureBox();
             this.iconBtThongKe = new FontAwesome.Sharp.IconButton();
@@ -50,6 +51,12 @@ namespace Quan_Ly_Thu_Vien
             this.panelMenu = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.guna2HtmlToolTip1 = new Guna.UI2.WinForms.Guna2HtmlToolTip();
+            this.panelCheck = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.check1 = new Guna.UI2.WinForms.Guna2CustomRadioButton();
+            this.check2 = new Guna.UI2.WinForms.Guna2CustomRadioButton();
+            this.check3 = new Guna.UI2.WinForms.Guna2CustomRadioButton();
+            this.check4 = new Guna.UI2.WinForms.Guna2CustomRadioButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.ShadowBar.SuspendLayout();
             this.panelDesktop.SuspendLayout();
@@ -57,6 +64,8 @@ namespace Quan_Ly_Thu_Vien
             ((System.ComponentModel.ISupportInitialize)(this.MTA)).BeginInit();
             this.panel1.SuspendLayout();
             this.panelMenu.SuspendLayout();
+            this.panelCheck.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -110,30 +119,21 @@ namespace Quan_Ly_Thu_Vien
             // ShadowBar
             // 
             this.ShadowBar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ShadowBar.Controls.Add(this.pictureBox1);
             this.ShadowBar.Controls.Add(this.guna2CirclePictureBox1);
             this.ShadowBar.Controls.Add(this.accountChip);
-            this.ShadowBar.Controls.Add(this.label1);
             this.ShadowBar.Controls.Add(this.exitbutton);
             this.ShadowBar.Controls.Add(this.FullScreen);
             this.ShadowBar.Cursor = System.Windows.Forms.Cursors.SizeAll;
             this.ShadowBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ShadowBar.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.ShadowBar.Location = new System.Drawing.Point(76, 0);
             this.ShadowBar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ShadowBar.Name = "ShadowBar";
             this.ShadowBar.Size = new System.Drawing.Size(1708, 110);
             this.ShadowBar.TabIndex = 5;
+            this.ShadowBar.Paint += new System.Windows.Forms.PaintEventHandler(this.ShadowBar_Paint);
             this.ShadowBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ScreenMove);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(488, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(475, 36);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "HỌC VIỆN KĨ THUẬT QUÂN SỰ";
             // 
             // exitbutton
             // 
@@ -185,6 +185,9 @@ namespace Quan_Ly_Thu_Vien
             // panelDesktop
             // 
             this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(245)))), ((int)(((byte)(247)))));
+            this.panelDesktop.Controls.Add(this.panelCheck);
+            this.panelDesktop.Controls.Add(this.btnNext);
+            this.panelDesktop.Controls.Add(this.btnPrevious);
             this.panelDesktop.Controls.Add(this.SliderPicture);
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -195,15 +198,63 @@ namespace Quan_Ly_Thu_Vien
             this.panelDesktop.Size = new System.Drawing.Size(1708, 961);
             this.panelDesktop.TabIndex = 6;
             // 
+            // btnNext
+            // 
+            this.btnNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNext.BackColor = System.Drawing.Color.Transparent;
+            this.btnNext.BorderRadius = 5;
+            this.btnNext.CheckedState.Parent = this.btnNext;
+            this.btnNext.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNext.CustomImages.Parent = this.btnNext;
+            this.btnNext.FillColor = System.Drawing.Color.Transparent;
+            this.btnNext.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnNext.ForeColor = System.Drawing.Color.White;
+            this.btnNext.HoverState.Parent = this.btnNext;
+            this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
+            this.btnNext.ImageSize = new System.Drawing.Size(70, 90);
+            this.btnNext.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnNext.Location = new System.Drawing.Point(1659, 476);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(0);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnNext.ShadowDecoration.Parent = this.btnNext;
+            this.btnNext.Size = new System.Drawing.Size(50, 70);
+            this.btnNext.TabIndex = 3;
+            this.btnNext.UseTransparentBackground = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // btnPrevious
+            // 
+            this.btnPrevious.BackColor = System.Drawing.Color.Transparent;
+            this.btnPrevious.BorderRadius = 5;
+            this.btnPrevious.CheckedState.Parent = this.btnPrevious;
+            this.btnPrevious.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrevious.CustomImages.Parent = this.btnPrevious;
+            this.btnPrevious.FillColor = System.Drawing.Color.Transparent;
+            this.btnPrevious.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnPrevious.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(179)))), ((int)(((byte)(99)))));
+            this.btnPrevious.HoverState.Parent = this.btnPrevious;
+            this.btnPrevious.Image = ((System.Drawing.Image)(resources.GetObject("btnPrevious.Image")));
+            this.btnPrevious.ImageSize = new System.Drawing.Size(70, 90);
+            this.btnPrevious.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnPrevious.Location = new System.Drawing.Point(0, 476);
+            this.btnPrevious.Margin = new System.Windows.Forms.Padding(0);
+            this.btnPrevious.Name = "btnPrevious";
+            this.btnPrevious.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(179)))), ((int)(((byte)(99)))));
+            this.btnPrevious.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnPrevious.ShadowDecoration.Parent = this.btnPrevious;
+            this.btnPrevious.Size = new System.Drawing.Size(50, 70);
+            this.btnPrevious.TabIndex = 2;
+            this.btnPrevious.UseTransparentBackground = true;
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
+            // 
             // SliderPicture
             // 
-            this.SliderPicture.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.SliderPicture.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SliderPicture.Image = ((System.Drawing.Image)(resources.GetObject("SliderPicture.Image")));
-            this.SliderPicture.Location = new System.Drawing.Point(32, 162);
+            this.SliderPicture.Location = new System.Drawing.Point(0, 0);
             this.SliderPicture.Name = "SliderPicture";
-            this.SliderPicture.Size = new System.Drawing.Size(1637, 684);
+            this.SliderPicture.Size = new System.Drawing.Size(1708, 961);
             this.SliderPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.SliderPicture.TabIndex = 0;
             this.SliderPicture.TabStop = false;
@@ -212,7 +263,7 @@ namespace Quan_Ly_Thu_Vien
             // 
             this.MTA.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MTA.Image = ((System.Drawing.Image)(resources.GetObject("MTA.Image")));
-            this.MTA.Location = new System.Drawing.Point(2, 38);
+            this.MTA.Location = new System.Drawing.Point(3, 71);
             this.MTA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MTA.Name = "MTA";
             this.MTA.Size = new System.Drawing.Size(74, 72);
@@ -368,6 +419,120 @@ namespace Quan_Ly_Thu_Vien
             this.guna2HtmlToolTip1.TitleFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlToolTip1.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(0)))));
             // 
+            // panelCheck
+            // 
+            this.panelCheck.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelCheck.BackColor = System.Drawing.Color.Transparent;
+            this.panelCheck.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(179)))), ((int)(((byte)(99)))));
+            this.panelCheck.BorderRadius = 12;
+            this.panelCheck.Controls.Add(this.check4);
+            this.panelCheck.Controls.Add(this.check3);
+            this.panelCheck.Controls.Add(this.check2);
+            this.panelCheck.Controls.Add(this.check1);
+            this.panelCheck.Location = new System.Drawing.Point(832, 914);
+            this.panelCheck.Name = "panelCheck";
+            this.panelCheck.ShadowDecoration.Parent = this.panelCheck;
+            this.panelCheck.Size = new System.Drawing.Size(202, 27);
+            this.panelCheck.TabIndex = 4;
+            this.panelCheck.UseTransparentBackground = true;
+            // 
+            // check1
+            // 
+            this.check1.BackColor = System.Drawing.Color.Transparent;
+            this.check1.Checked = true;
+            this.check1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(179)))), ((int)(((byte)(99)))));
+            this.check1.CheckedState.BorderThickness = 0;
+            this.check1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(179)))), ((int)(((byte)(99)))));
+            this.check1.CheckedState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(179)))), ((int)(((byte)(99)))));
+            this.check1.CheckedState.Parent = this.check1;
+            this.check1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.check1.Location = new System.Drawing.Point(8, 3);
+            this.check1.Name = "check1";
+            this.check1.ShadowDecoration.Parent = this.check1;
+            this.check1.Size = new System.Drawing.Size(20, 20);
+            this.check1.TabIndex = 0;
+            this.check1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.check1.UncheckedState.BorderThickness = 2;
+            this.check1.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.check1.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.check1.UncheckedState.Parent = this.check1;
+            this.check1.UseTransparentBackground = true;
+            // 
+            // check2
+            // 
+            this.check2.BackColor = System.Drawing.Color.Transparent;
+            this.check2.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(179)))), ((int)(((byte)(99)))));
+            this.check2.CheckedState.BorderThickness = 0;
+            this.check2.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(179)))), ((int)(((byte)(99)))));
+            this.check2.CheckedState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(179)))), ((int)(((byte)(99)))));
+            this.check2.CheckedState.Parent = this.check2;
+            this.check2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.check2.Location = new System.Drawing.Point(69, 3);
+            this.check2.Name = "check2";
+            this.check2.ShadowDecoration.Parent = this.check2;
+            this.check2.Size = new System.Drawing.Size(20, 20);
+            this.check2.TabIndex = 5;
+            this.check2.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.check2.UncheckedState.BorderThickness = 2;
+            this.check2.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.check2.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.check2.UncheckedState.Parent = this.check2;
+            this.check2.UseTransparentBackground = true;
+            // 
+            // check3
+            // 
+            this.check3.BackColor = System.Drawing.Color.Transparent;
+            this.check3.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(179)))), ((int)(((byte)(99)))));
+            this.check3.CheckedState.BorderThickness = 0;
+            this.check3.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(179)))), ((int)(((byte)(99)))));
+            this.check3.CheckedState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(179)))), ((int)(((byte)(99)))));
+            this.check3.CheckedState.Parent = this.check3;
+            this.check3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.check3.Location = new System.Drawing.Point(125, 3);
+            this.check3.Name = "check3";
+            this.check3.ShadowDecoration.Parent = this.check3;
+            this.check3.Size = new System.Drawing.Size(20, 20);
+            this.check3.TabIndex = 6;
+            this.check3.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.check3.UncheckedState.BorderThickness = 2;
+            this.check3.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.check3.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.check3.UncheckedState.Parent = this.check3;
+            this.check3.UseTransparentBackground = true;
+            // 
+            // check4
+            // 
+            this.check4.BackColor = System.Drawing.Color.Transparent;
+            this.check4.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(179)))), ((int)(((byte)(99)))));
+            this.check4.CheckedState.BorderThickness = 0;
+            this.check4.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(179)))), ((int)(((byte)(99)))));
+            this.check4.CheckedState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(179)))), ((int)(((byte)(99)))));
+            this.check4.CheckedState.Parent = this.check4;
+            this.check4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.check4.Location = new System.Drawing.Point(176, 3);
+            this.check4.Name = "check4";
+            this.check4.ShadowDecoration.Parent = this.check4;
+            this.check4.Size = new System.Drawing.Size(20, 20);
+            this.check4.TabIndex = 7;
+            this.check4.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.check4.UncheckedState.BorderThickness = 2;
+            this.check4.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.check4.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.check4.UncheckedState.Parent = this.check4;
+            this.check4.UseTransparentBackground = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(246, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1131, 109);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
+            // 
             // Trangchu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -378,6 +543,7 @@ namespace Quan_Ly_Thu_Vien
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(249)))), ((int)(((byte)(181)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Trangchu";
             this.Opacity = 0.97D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -391,6 +557,8 @@ namespace Quan_Ly_Thu_Vien
             ((System.ComponentModel.ISupportInitialize)(this.MTA)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
+            this.panelCheck.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -401,7 +569,6 @@ namespace Quan_Ly_Thu_Vien
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private FontAwesome.Sharp.IconButton accountChip;
         private System.Windows.Forms.Panel ShadowBar;
-        private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton exitbutton;
         private FontAwesome.Sharp.IconButton FullScreen;
         public System.Windows.Forms.Panel panelDesktop;
@@ -416,6 +583,14 @@ namespace Quan_Ly_Thu_Vien
         private System.Windows.Forms.PictureBox SliderPicture;
         private System.Windows.Forms.Timer timer1;
         private Guna.UI2.WinForms.Guna2HtmlToolTip guna2HtmlToolTip1;
+        private Guna.UI2.WinForms.Guna2Button btnPrevious;
+        private Guna.UI2.WinForms.Guna2Button btnNext;
+        private Guna.UI2.WinForms.Guna2GradientPanel panelCheck;
+        private Guna.UI2.WinForms.Guna2CustomRadioButton check4;
+        private Guna.UI2.WinForms.Guna2CustomRadioButton check3;
+        private Guna.UI2.WinForms.Guna2CustomRadioButton check2;
+        private Guna.UI2.WinForms.Guna2CustomRadioButton check1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
